@@ -1,0 +1,103 @@
+body {  
+    font-family: 'Verdana', sans-serif; /* Mudança de fonte */  
+    margin: 0;  
+    background-color: #e0f7fa; /* Cor de fundo suave azul claro */  
+}  
+
+header {  
+    background-color: #00796b; /* Cor verde profunda */  
+    color: #ffffff; /* Texto branco */  
+    text-align: center;  
+    padding: 2rem; /* Aumentado o padding */  
+}  
+
+header nav ul {  
+    list-style: none;  
+    padding: 0;  
+    display: flex;  
+    justify-content: center;  
+    gap: 2rem; /* Aumentado o espaço entre os itens */  
+}  
+
+header nav ul li a {  
+    text-decoration: none;  
+    color: #ffeb3b; /* Texto amarelo */  
+    font-weight: bold;  
+    transition: color 0.3s; /* Efeito de transição */  
+}  
+
+header nav ul li a:hover {  
+    color: #dce775; /* Amarelo mais claro ao passar o mouse */  
+}  
+
+main {  
+    padding: 3rem; /* Aumentado o padding */  
+    background-color: #ffffff; /* Cor de fundo branco para o conteúdo principal */  
+    border-radius: 10px; /* Bordas arredondadas */  
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */  
+}  
+
+section {  
+    margin-bottom: 3rem; /* Aumentado o espaço entre seções */  
+}  
+
+/* Flexbox for aligning image and text */  
+.dish {  
+    display: flex; /* Mantido apenas para layout lado a lado */  
+    align-items: center; /* Alinhamento vertical */  
+    gap: 1.5rem; /* Aumentado o espaço entre imagem e texto */  
+    margin-bottom: 2rem; /* Aumentado o espaçamento entre pratos */  
+}  
+
+/* Image styling */  
+.dish img {  
+    width: 180px; /* Largura aumentada da imagem */  
+    height: auto; /* Manter proporção */  
+    border-radius: 10px; /* Bordas mais arredondadas */  
+}  
+
+/* Text styling */  
+.dish p {  
+    margin: 0;  
+    font-size: 1.1rem; /* Aumentado o tamanho da fonte */  
+    color: #424242; /* Cor de texto suave */  
+}  
+
+/* Footer styling */  
+footer {  
+    background-color: #263238; /* Cor de fundo cinza escuro */  
+    color: #ffffff; /* Texto branco */  
+    text-align: center;  
+    padding: 1.5rem; /* Aumentado o padding do rodapé */  
+}  
+
+#cart-container {  
+    display: flex;  
+    justify-content: space-between;  
+    align-items: center;  
+    background-color: #00796b; /* Usar a mesma cor do header */  
+    color: #ffffff; /* Texto branco */  
+    padding: 1.5rem;  
+    margin-bottom: 1rem;  
+}  
+
+#cart-button {  
+    padding: 0.7rem 1.5rem; /* Aumentado o padding do botão */  
+    background-color: #ffeb3b; /* Botão amarelo */  
+    color: #00796b; /* Texto verde */  
+    border: none;  
+    border-radius: 5px;  
+    font-size: 1rem;  
+    cursor: pointer;  
+    transition: background-color 0.3s; /* Efeito de transição */  
+}  
+
+#cart-button:hover {  
+    background-color: #ffc400; /* Amarelo mais escuro ao passar o mouse */  
+    color: #ffffff; /* Texto branco */  
+}  
+
+#cart-total {  
+    font-size: 1.4rem; /* Aumentado o tamanho da fonte para total do carrinho */  
+    font-weight: bold;  
+}  
