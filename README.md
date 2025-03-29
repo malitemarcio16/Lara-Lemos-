@@ -1,2 +1,2 @@
 # Lara-Lemos-
-project: customer journey
+project: Márcio Malite/Web Design Project/ restaurant project/
