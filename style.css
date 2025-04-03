@@ -1,103 +1,112 @@
-body {  
-    font-family: 'Verdana', sans-serif; /* Mudança de fonte */  
-    margin: 0;  
-    background-color: #e0f7fa; /* Cor de fundo suave azul claro */  
-}  
+/* Simplified, functional styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    background: #f5f5f5;
+}
 
-header {  
-    background-color: #00796b; /* Cor verde profunda */  
-    color: #ffffff; /* Texto branco */  
-    text-align: center;  
-    padding: 2rem; /* Aumentado o padding */  
-}  
+header {
+    background: #333;
+    color: white;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
 
-header nav ul {  
-    list-style: none;  
-    padding: 0;  
-    display: flex;  
-    justify-content: center;  
-    gap: 2rem; /* Aumentado o espaço entre os itens */  
-}  
+header nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
+}
 
-header nav ul li a {  
-    text-decoration: none;  
-    color: #ffeb3b; /* Texto amarelo */  
-    font-weight: bold;  
-    transition: color 0.3s; /* Efeito de transição */  
-}  
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem;
+}
 
-header nav ul li a:hover {  
-    color: #dce775; /* Amarelo mais claro ao passar o mouse */  
-}  
+#search-bar {
+    padding: 0.5rem;
+    width: 80%;
+    max-width: 400px;
+    margin: 0.5rem auto;
+    display: block;
+}
 
-main {  
-    padding: 3rem; /* Aumentado o padding */  
-    background-color: #ffffff; /* Cor de fundo branco para o conteúdo principal */  
-    border-radius: 10px; /* Bordas arredondadas */  
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */  
-}  
+#filters, #cart-container {
+    margin: 1rem auto;
+    text-align: center;
+}
 
-section {  
-    margin-bottom: 3rem; /* Aumentado o espaço entre seções */  
-}  
+button {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
 
-/* Flexbox for aligning image and text */  
-.dish {  
-    display: flex; /* Mantido apenas para layout lado a lado */  
-    align-items: center; /* Alinhamento vertical */  
-    gap: 1.5rem; /* Aumentado o espaço entre imagem e texto */  
-    margin-bottom: 2rem; /* Aumentado o espaçamento entre pratos */  
-}  
+.dish {
+    background: white;
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+}
 
-/* Image styling */  
-.dish img {  
-    width: 180px; /* Largura aumentada da imagem */  
-    height: auto; /* Manter proporção */  
-    border-radius: 10px; /* Bordas mais arredondadas */  
-}  
+.dish img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+}
 
-/* Text styling */  
-.dish p {  
-    margin: 0;  
-    font-size: 1.1rem; /* Aumentado o tamanho da fonte */  
-    color: #424242; /* Cor de texto suave */  
-}  
+.add-to-cart {
+    background: #4CAF50;
+    color: white;
+    border: none;
+}
 
-/* Footer styling */  
-footer {  
-    background-color: #263238; /* Cor de fundo cinza escuro */  
-    color: #ffffff; /* Texto branco */  
-    text-align: center;  
-    padding: 1.5rem; /* Aumentado o padding do rodapé */  
-}  
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
 
-#cart-container {  
-    display: flex;  
-    justify-content: space-between;  
-    align-items: center;  
-    background-color: #00796b; /* Usar a mesma cor do header */  
-    color: #ffffff; /* Texto branco */  
-    padding: 1.5rem;  
-    margin-bottom: 1rem;  
-}  
+/* Checkout Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+}
 
-#cart-button {  
-    padding: 0.7rem 1.5rem; /* Aumentado o padding do botão */  
-    background-color: #ffeb3b; /* Botão amarelo */  
-    color: #00796b; /* Texto verde */  
-    border: none;  
-    border-radius: 5px;  
-    font-size: 1rem;  
-    cursor: pointer;  
-    transition: background-color 0.3s; /* Efeito de transição */  
-}  
+.modal-content {
+    background: white;
+    margin: 10% auto;
+    padding: 2rem;
+    width: 80%;
+    max-width: 500px;
+}
 
-#cart-button:hover {  
-    background-color: #ffc400; /* Amarelo mais escuro ao passar o mouse */  
-    color: #ffffff; /* Texto branco */  
-}  
+.close {
+    float: right;
+    cursor: pointer;
+}
 
-#cart-total {  
-    font-size: 1.4rem; /* Aumentado o tamanho da fonte para total do carrinho */  
-    font-weight: bold;  
-}  
+#checkout-form input {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    box-sizing: border-box;
+}
