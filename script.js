@@ -1,62 +1,53 @@
-document.addEventListener("DOMContentLoaded", () => {  
-    console.log("Digital Menu Website Loaded!");  
+document.addEventListener("DOMContentLoaded", () => {
+    // Existing cart functionality (keep all your current code)
+    
+    // Add this new checkout functionality:
+    const cartButton = document.getElementById("cart-button");
+    const modal = document.createElement("div");
+    modal.className = "modal";
+    modal.innerHTML = `
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Checkout</h2>
+            <div id="cart-items-list"></div>
+            <p id="checkout-total">Total: 0 MZN</p>
+            <form id="checkout-form">
+                <input type="text" placeholder="Full Name" required>
+                <input type="tel" placeholder="Phone Number" required>
+                <input type="email" placeholder="Email" required>
+                <button type="submit">Complete Order</button>
+            </form>
+        </div>
+    `;
+    document.body.appendChild(modal);
 
-    // Funcionalidade da barra de pesquisa  
-    const searchBar = document.getElementById("search-bar");  
-    const dishes = document.querySelectorAll("section div");  
+    const closeBtn = modal.querySelector(".close");
+    closeBtn.onclick = () => modal.style.display = "none";
+    
+    // Modified cart button click handler
+    cartButton.addEventListener("click", () => {
+        const itemsList = modal.querySelector("#cart-items-list");
+        itemsList.innerHTML = "";
+        // In a real app, you would list all cart items here
+        itemsList.innerHTML = "<p>Items in your cart will appear here</p>";
+        modal.querySelector("#checkout-total").textContent = `Total: ${totalAmount.toFixed(2)} MZN`;
+        modal.style.display = "block";
+    });
 
-    searchBar.addEventListener("input", (event) => {  
-        const searchText = event.target.value.toLowerCase();  
+    // Form submission
+    const form = modal.querySelector("#checkout-form");
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        alert(`Order submitted! Total: ${totalAmount.toFixed(2)} MZN\nWe'll contact you shortly.`);
+        totalAmount = 0;
+        cartTotal.textContent = `Total: 0 MZN`;
+        modal.style.display = "none";
+    });
 
-        dishes.forEach(dish => {  
-            const text = dish.textContent.toLowerCase();  
-            if (text.includes(searchText)) {  
-                dish.style.display = "block";  
-            } else {  
-                dish.style.display = "none";  
-            }  
-        });  
-    });  
-
-    console.log("Funcionalidade de pesquisa inicializada!");  
-
-    // Funcionalidade de filtro vegetariano  
-    const vegetarianButton = document.getElementById("vegetarian");  
-
-    vegetarianButton.addEventListener("click", () => {  
-        dishes.forEach(dish => {  
-            if (dish.textContent.toLowerCase().includes("vegetarian")) {  
-                dish.style.display = "block";  
-            } else {  
-                dish.style.display = "none";  
-            }  
-        });  
-    });  
-
-    console.log("Funcionalidade de filtro vegetariano inicializada!");  
-
-    // Funcionalidade do carrinho  
-    const cartButton = document.getElementById("cart-button");  
-    const cartTotal = document.getElementById("cart-total");  
-    const addToCartButtons = document.querySelectorAll(".add-to-cart");  
-
-    let totalAmount = 0;  
-
-    addToCartButtons.forEach(button => {  
-        button.addEventListener("click", () => {  
-            const price = parseFloat(button.getAttribute("data-price"));  
-            const name = button.getAttribute("data-name");  
-
-            totalAmount += price;  
-
-            alert(`${name} foi adicionado ao seu carrinho!`);  
-            cartTotal.textContent = `Total: ${totalAmount.toFixed(2)} MZN`;  
-        });  
-    });  
-
-    cartButton.addEventListener("click", () => {  
-        alert(`Seu total é ${totalAmount.toFixed(2)} MZN.`);  
-    });  
-
-    console.log("Funcionalidade do carrinho inicializada!");  
-});  
+    // Close modal when clicking outside
+    window.onclick = (event) => {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    }
+});
