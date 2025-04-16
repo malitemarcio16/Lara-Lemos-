@@ -1,21 +1,20 @@
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: Arial, sans-serif;
   margin: 0;
-  background-color: #fdfdfd;
+  background: #fffdf8;
   color: #333;
 }
 
 header {
-  text-align: center;
-  background-color: #e63946;
-  color: white;
+  background: #e63946;
   padding: 2rem;
+  text-align: center;
+  color: #fff;
 }
 
-header .tagline {
+.tagline {
   font-style: italic;
   font-size: 1rem;
-  margin-top: 0.5rem;
 }
 
 .menu-section {
@@ -23,9 +22,8 @@ header .tagline {
 }
 
 .menu-section h2 {
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
   color: #e63946;
 }
 
@@ -33,65 +31,51 @@ header .tagline {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
-  padding: 0 1rem;
 }
 
 .dish-card {
-  background-color: white;
+  background: #fff;
   border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  display: flex;
-  flex-direction: column;
-}
-
-.dish-image {
-  height: 180px;
-  background-size: cover;
-  background-position: center;
-}
-
-.dish-info {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
+  text-align: center;
 }
 
-.dish-info h3 {
-  margin: 0;
-  font-size: 1.3rem;
-}
-
-.dish-info p {
-  font-size: 0.95rem;
-  margin: 0.5rem 0;
-  color: #666;
+.dish-card img {
+  max-width: 100%;
+  border-radius: 8px;
+  height: 180px;
+  object-fit: cover;
 }
 
 .dish-footer {
+  margin-top: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 1rem;
 }
 
 .price {
-  color: #e63946;
   font-weight: bold;
-  font-size: 1.1rem;
+  color: #e63946;
 }
 
-button {
-  background-color: #333;
+.add-btn {
+  background: #333;
   color: white;
   border: none;
-  padding: 0.5rem 1rem;
+  padding: 0.4rem 0.8rem;
   border-radius: 6px;
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #555;
+.add-btn:hover {
+  background: #555;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #f1f1f1;
+  margin-top: 2rem;
 }
