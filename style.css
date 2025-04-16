@@ -231,9 +231,10 @@ main {
 }
 
 .menu-grid {
-    display: grid;
+    display: fle;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
+    gap: 2rem auto;
+    justify-content: center;
 }
 
 /* Dish Cards */
@@ -243,7 +244,7 @@ main {
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0,0,0,0.08);
     transition: all 0.3s;
-    position: relative;
+    position: center;
 }
 
 .dish-card:hover {
@@ -518,6 +519,7 @@ footer i {
     
     .menu-grid {
         grid-template-columns: 1fr;
+        display: flex;
     }
     
     .dish-card {
