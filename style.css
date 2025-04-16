@@ -1,67 +1,97 @@
-/* Reset */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #fff;
-  color: #333;
-  padding: 0;
   margin: 0;
+  background-color: #fdfdfd;
+  color: #333;
 }
 
-/* Header Styling */
 header {
-  background-color: #ff5757;
-  padding: 2rem;
   text-align: center;
+  background-color: #e63946;
   color: white;
-}
-
-header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+  padding: 2rem;
 }
 
 header .tagline {
-  font-size: 1.2rem;
-}
-
-/* Navigation */
-nav ul.nav-links {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 1rem;
-  list-style: none;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
+  font-style: italic;
   font-size: 1rem;
-  transition: color 0.3s;
+  margin-top: 0.5rem;
 }
 
-.nav-links a:hover {
-  color: #ffdfdf;
+.menu-section {
+  padding: 2rem;
 }
 
-/* Header Controls */
-.header-controls {
-  margin-top: 1.5rem;
+.menu-section h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #e63946;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+.dish-card {
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
+  flex-direction: column;
 }
 
-.search-container input {
-  padding: 0.5rem;
-  border-radius: 6px;
+.dish-image {
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+}
+
+.dish-info {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.dish-info h3 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.dish-info p {
+  font-size: 0.95rem;
+  margin: 0.5rem 0;
+  color: #666;
+}
+
+.dish-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.price {
+  color: #e63946;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+button {
+  background-color: #333;
+  color: white;
   border: none;
-  width:
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555;
+}
