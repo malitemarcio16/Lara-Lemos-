@@ -6,6 +6,22 @@ body {
 }
 
 header {
+  background-color: red; /* Red background */
+  padding: 20px;
+  text-align: center;
+}
+
+.logo-container {
+  max-width: 200px; /* You can adjust this value as needed */
+  margin: 0 auto;
+}
+
+.logo {
+  width: 100%; /* Adjusts to the container's width */
+  max-width: 150px; /* Max width of the logo */
+  height: auto;
+}
+
   background: #e63946;
   padding: 2rem;
   text-align: center;
