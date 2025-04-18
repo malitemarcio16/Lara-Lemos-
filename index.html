@@ -3,63 +3,51 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Digital Menu</title>
-  <link rel="stylesheet" href="style.css"/>
-  <script defer src="script.js"></script>
+  <title>Welcome to Lindyla Take Away</title>
+  <link rel="stylesheet" href="all.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
- <header>
-  <div class="logo-container">
-    <img src="image/lindyla-logo.png" alt="Lindyla Take Away Logo" class="logo">
-  </div>
-</header>
-
-    <h1>Lindyla Takeaway</h1>
-    <p class="tagline">Authentic Mozambican Cuisine</p>
+  <header>
+    <div class="header-content">
+      <h1>Lindyla Take Away</h1>
+      <p class="tagline">Delicious meals at your fingertips</p>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+          <li><a href="#"><i class="fa fa-utensils"></i> Menu</a></li>
+          <li><a href="#"><i class="fa fa-info-circle"></i> About</a></li>
+          <li><a href="#"><i class="fa fa-phone"></i> Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-controls">
+        <div class="search-container">
+          <i class="fa fa-search"></i>
+          <input type="text" id="search-bar" placeholder="Search dishes...">
+        </div>
+        <button id="vegetarian"><i class="fa fa-leaf"></i> Vegetarian</button>
+        <div class="cart-container">
+          <button id="cart-button"><i class="fa fa-shopping-cart"></i><span id="cart-count">0</span></button>
+          <span id="cart-total">$0.00</span>
+        </div>
+      </div>
+    </div>
   </header>
 
   <main>
-    <section class="menu-section" id="appetizers">
-      <h2>Appetizers</h2>
+    <section class="menu-section">
+      <h2><i class="fa fa-fire"></i> Popular Dishes</h2>
       <div class="menu-grid">
-        <div class="dish-card" data-name="Badjias" data-price="4.99">
-          <img src="images/bajias.png" alt="Badjias">
-          <h3>Badjias</h3>
-          <p>Crispy Mozambican vegetable fritters</p>
-          <div class="dish-footer">
-            <span class="price">4.99 MZN</span>
-            <button class="add-btn">Add</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="menu-section" id="drinks">
-      <h2>Drinks</h2>
-      <div class="menu-grid">
-        <div class="dish-card" data-name="Coca-Cola" data-price="25">
-          <img src="images/coca.png" alt="Coca-Cola">
-          <h3>Coca-Cola</h3>
-          <p>Chilled soft drink</p>
-          <div class="dish-footer">
-            <span class="price">25 MZN</span>
-            <button class="add-btn">Add</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="menu-section" id="desserts">
-      <h2>Desserts</h2>
-      <div class="menu-grid">
-        <div class="dish-card" data-name="Bolo Molhado" data-price="45">
-          <img src="images/bolo.png" alt="Bolo Molhado">
-          <h3>Bolo Molhado</h3>
-          <p>Moist chocolate cake</p>
-          <div class="dish-footer">
-            <span class="price">45 MZN</span>
-            <button class="add-btn">Add</button>
+        <!-- Dishes will go here -->
+        <div class="dish-card">
+          <div class="dish-image" style="background-image: url('images/dish1.jpg');"></div>
+          <div class="dish-info">
+            <h3>Chicken Peri-Peri</h3>
+            <p>Grilled chicken with our secret spicy sauce.</p>
+            <div class="dish-footer">
+              <span class="price">$7.99</span>
+              <button class="add-to-cart"><i class="fa fa-cart-plus"></i> Add</button>
+            </div>
           </div>
         </div>
       </div>
@@ -67,8 +55,22 @@
   </main>
 
   <footer>
-    <h3>Cart Total: <span id="total">0.00</span> MZN</h3>
+    <div class="footer-content">
+      <div>
+        <h3>About Us</h3>
+        <p>Your favorite neighborhood takeaway offering delicious and fresh meals.</p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <p><i class="fa fa-phone"></i> +123 456 7890</p>
+        <p><i class="fa fa-envelope"></i> info@lindyla.com</p>
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; 2025 Lindyla Take Away. All rights reserved.
+    </div>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
