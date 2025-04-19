@@ -6,12 +6,57 @@
   <title>Welcome to Lindyla Take Away</title>
   <link rel="stylesheet" href="all.min.css">
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* QR Intro Screen */
+    #qr-screen {
+      position: fixed;
+      inset: 0;
+      background: #fff;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      text-align: center;
+    }
+
+    #qr-screen img {
+      max-width: 300px;
+      margin-bottom: 20px;
+    }
+
+    #qr-screen button {
+      background-color: #e60000;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    header .header-content img {
+      max-height: 80px;
+      margin-bottom: 10px;
+    }
+
+    .header-content h1, .tagline {
+      display: none;
+    }
+  </style>
 </head>
 <body>
+  <!-- QR INTRO SCREEN -->
+  <div id="qr-screen">
+    <img src="qr.png" alt="Scan QR to view menu">
+    <p>Please scan the QR code to view the menu.</p>
+    <button onclick="document.getElementById('qr-screen').style.display='none'">Continue to Website</button>
+  </div>
+
   <header>
     <div class="header-content">
-      <h1>Lindyla Take Away</h1>
-      <p class="tagline">Delicious meals at your fingertips</p>
+      <img src="logo.png" alt="Lindyla Logo">
       <nav>
         <ul class="nav-links">
           <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
@@ -38,7 +83,6 @@
     <section class="menu-section">
       <h2><i class="fa fa-fire"></i> Popular Dishes</h2>
       <div class="menu-grid">
-        <!-- Dishes will go here -->
         <div class="dish-card">
           <div class="dish-image" style="background-image: url('images/dish1.jpg');"></div>
           <div class="dish-info">
@@ -74,3 +118,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+
