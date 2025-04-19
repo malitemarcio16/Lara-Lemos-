@@ -1,115 +1,48 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background: #fffdf8;
-  color: #333;
-}
-
-header {
-  background-color: red; /* Red background */
-  padding: 20px;
-  text-align: center;
-}
-
-.logo-container {
-  max-width: 200px; /* You can adjust this value as needed */
-  margin: 0 auto;
-}
-<style>
-  header {
-    background-color: red;
-    padding: 20px;
-    text-align: center;
-  }
-
-  .logo-container {
-    max-width: 200px;
-    margin: 0 auto;
-  }
-
-  .logo {
-    width: 100%;
-    max-width: 150px;
-    height: auto;
-  }
-</style>
-
-.logo {
-  width: 100%; /* Adjusts to the container's width */
-  max-width: 150px; /* Max width of the logo */
-  height: auto;
-}
-
-  background: #e63946;
-  padding: 2rem;
-  text-align: center;
-  color: #fff;
-}
-
-.tagline {
-  font-style: italic;
-  font-size: 1rem;
-}
-
-.menu-section {
-  padding: 2rem;
-}
-
-.menu-section h2 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  color: #e63946;
-}
-
-.menu-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-}
-
-.dish-card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  padding: 1rem;
-  text-align: center;
-}
-
-.dish-card img {
-  max-width: 100%;
-  border-radius: 8px;
-  height: 180px;
-  object-fit: cover;
-}
-
-.dish-footer {
-  margin-top: 1rem;
+/* QR Intro Screen */
+#qr-screen {
+  position: fixed;
+  inset: 0;
+  background-color: var(--light);
+  z-index: 9999;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+  transition: opacity 1s ease;
 }
 
-.price {
-  font-weight: bold;
-  color: #e63946;
+#qr-screen.fade-out {
+  opacity: 0;
+  pointer-events: none;
 }
 
-.add-btn {
-  background: #333;
+#qr-screen img {
+  max-width: 280px;
+  margin-bottom: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+#qr-screen button {
+  background-color: var(--primary);
   color: white;
   border: none;
-  padding: 0.4rem 0.8rem;
-  border-radius: 6px;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  border-radius: 50px;
   cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 600;
 }
 
-.add-btn:hover {
-  background: #555;
+#qr-screen button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
 }
 
-footer {
-  text-align: center;
-  padding: 1rem;
-  background: #f1f1f1;
-  margin-top: 2rem;
+header .header-content img {
+  max-height: 80px;
+  margin-bottom: 1rem;
 }
