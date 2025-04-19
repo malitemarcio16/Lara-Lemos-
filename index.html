@@ -7,11 +7,16 @@
   <link rel="stylesheet" href="all.min.css">
   <link rel="stylesheet" href="style.css">
   <style>
-    /* QR Intro Screen */
+    body {
+      background: linear-gradient(135deg, #ffe5ec, #ffc2d1);
+      font-family: 'Poppins', sans-serif;
+      color: #4a4a4a;
+    }
+
     #qr-screen {
       position: fixed;
       inset: 0;
-      background: #fff;
+      background: #fff0f5;
       z-index: 9999;
       display: flex;
       flex-direction: column;
@@ -29,27 +34,123 @@
     }
 
     #qr-screen img {
-      max-width: 300px;
+      max-width: 280px;
       margin-bottom: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     }
 
     #qr-screen button {
-      background-color: #e60000;
+      background: #ff4f81;
       color: #fff;
       border: none;
-      padding: 12px 24px;
+      padding: 12px 28px;
+      border-radius: 30px;
       font-size: 16px;
-      border-radius: 8px;
+      font-weight: 600;
       cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    #qr-screen button:hover {
+      background: #ff3366;
+      transform: scale(1.05);
+    }
+
+    header {
+      background: linear-gradient(to right, #ff4f81, #ff6f91);
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      border-bottom-left-radius: 50px;
+      border-bottom-right-radius: 50px;
     }
 
     header .header-content img {
-      max-height: 80px;
+      max-height: 90px;
       margin-bottom: 10px;
     }
 
-    .header-content h1, .tagline {
-      display: none;
+    h1, .tagline {
+      color: white;
+    }
+
+    .nav-links a {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      transition: background 0.3s;
+    }
+
+    .nav-links a:hover {
+      background: rgba(255,255,255,0.4);
+    }
+
+    .menu-section h2 {
+      text-align: center;
+      color: #ff4f81;
+      margin-top: 3rem;
+    }
+
+    .dish-card {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .dish-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .dish-info h3 {
+      color: #ff4f81;
+      font-size: 1.3rem;
+    }
+
+    .dish-info p {
+      font-size: 0.95rem;
+    }
+
+    .price {
+      color: #ff4f81;
+      font-weight: bold;
+    }
+
+    .add-to-cart {
+      background: #ff6f91;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .add-to-cart:hover {
+      background: #ff4f81;
+    }
+
+    footer {
+      background: #ff4f81;
+      color: white;
+      padding: 3rem 1rem 1rem;
+      margin-top: 3rem;
+      border-top-left-radius: 40px;
+      border-top-right-radius: 40px;
+    }
+
+    .footer-content h3 {
+      color: white;
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      opacity: 0.85;
     }
   </style>
 </head>
@@ -57,13 +158,15 @@
   <!-- QR INTRO SCREEN -->
   <div id="qr-screen">
     <img src="qr.png" alt="Scan QR to view menu">
-    <p>Please scan the QR code to view the menu.</p>
-    <button onclick="hideQRScreen()">Continue to Website</button>
+    <p>Please scan the QR code to view our sweet menu ✨</p>
+    <button onclick="hideQRScreen()">Enter Menu</button>
   </div>
 
   <header>
     <div class="header-content">
       <img src="logo.png" alt="Lindyla Logo">
+      <h1>Lindyla Take Away</h1>
+      <p class="tagline">Delicious meals at your fingertips</p>
       <nav>
         <ul class="nav-links">
           <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
@@ -91,7 +194,7 @@
       <h2><i class="fa fa-fire"></i> Popular Dishes</h2>
       <div class="menu-grid">
         <div class="dish-card">
-          <div class="dish-image" style="background-image: url('images/dish1.jpg');"></div>
+          <div class="dish-image" style="background-image: url('images/dish1.jpg'); height: 200px; background-size: cover; background-position: center;"></div>
           <div class="dish-info">
             <h3>Chicken Peri-Peri</h3>
             <p>Grilled chicken with our secret spicy sauce.</p>
