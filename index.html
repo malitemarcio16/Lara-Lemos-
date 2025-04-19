@@ -19,13 +19,6 @@
       justify-content: center;
       padding: 20px;
       text-align: center;
-      opacity: 1;
-      transition: opacity 1s ease;
-    }
-
-    #qr-screen.fade-out {
-      opacity: 0;
-      pointer-events: none;
     }
 
     #qr-screen img {
@@ -58,7 +51,7 @@
   <div id="qr-screen">
     <img src="qr.png" alt="Scan QR to view menu">
     <p>Please scan the QR code to view the menu.</p>
-    <button onclick="hideQRScreen()">Continue to Website</button>
+    <button onclick="document.getElementById('qr-screen').style.display='none'">Continue to Website</button>
   </div>
 
   <header>
@@ -122,13 +115,7 @@
     </div>
   </footer>
 
-  <script>
-    function hideQRScreen() {
-      const qr = document.getElementById('qr-screen');
-      qr.classList.add('fade-out');
-      setTimeout(() => qr.style.display = 'none', 1000);
-    }
-  </script>
   <script src="script.js"></script>
 </body>
 </html>
+
