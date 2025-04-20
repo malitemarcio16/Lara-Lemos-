@@ -129,29 +129,6 @@
       setTimeout(() => qr.style.display = 'none', 1000);
     }
   </script>
-  
   <script src="script.js"></script>
 </body>
 </html>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    let cartCount = 0;
-    let cartTotal = 0;
-
-    const dishPrice = 7.99;
-    const cartCountEl = document.getElementById("cart-count");
-    const cartTotalEl = document.getElementById("cart-total");
-
-    const addButtons = document.querySelectorAll(".add-to-cart");
-    addButtons.forEach(btn => {
-      btn.addEventListener("click", () => {
-        cartCount++;
-        cartTotal += dishPrice;
-
-        cartCountEl.textContent = cartCount;
-        cartTotalEl.textContent = `$${cartTotal.toFixed(2)}`;
-      });
-    });
-  });
-</script>
-
