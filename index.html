@@ -3,132 +3,197 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Welcome to Lindyla Take Away</title>
+  <title>Lindyla Take Away</title>
   <link rel="stylesheet" href="all.min.css">
   <link rel="stylesheet" href="style.css">
   <style>
-    /* QR Intro Screen */
-    #qr-screen {
-      position: fixed;
-      inset: 0;
-      background: #fff;
-      z-index: 9999;
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff0f0;
+      color: #333;
+    }
+
+    header {
+      background-color: #e60000;
+      padding: 1rem;
+      color: white;
+      text-align: center;
+    }
+
+    .header-content img {
+      max-height: 80px;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 0.5rem;
+      list-style: none;
+      padding: 0;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .cart-container, .search-container, #vegetarian {
+      margin: 10px auto;
+      display: inline-block;
+    }
+
+    .menu-section {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .menu-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .dish-card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      width: 250px;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
+    }
+
+    .dish-image {
+      height: 150px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .dish-info {
+      padding: 1rem;
+    }
+
+    .dish-footer {
+      display: flex;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-      padding: 20px;
-      text-align: center;
-      opacity: 1;
-      transition: opacity 1s ease;
+      margin-top: 0.5rem;
     }
 
-    #qr-screen.fade-out {
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    #qr-screen img {
-      max-width: 300px;
-      margin-bottom: 20px;
-    }
-
-    #qr-screen button {
+    .add-to-cart {
       background-color: #e60000;
-      color: #fff;
+      color: white;
       border: none;
-      padding: 12px 24px;
-      font-size: 16px;
-      border-radius: 8px;
+      padding: 6px 12px;
+      border-radius: 6px;
       cursor: pointer;
     }
 
-    header .header-content img {
-      max-height: 80px;
-      margin-bottom: 10px;
+    footer {
+      background-color: #e60000;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
     }
 
-    .header-content h1, .tagline {
-      display: none;
+    .payment-options {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .payment-options button {
+      background-color: #fff;
+      border: 2px solid #e60000;
+      color: #e60000;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <!-- QR INTRO SCREEN -->
-  <div id="qr-screen">
-    <img src="qr.png" alt="Scan QR to view menu">
-    <p>Please scan the QR code to view the menu.</p>
-    <button onclick="hideQRScreen()">Continue to Website</button>
-  </div>
-
   <header>
     <div class="header-content">
-      <img src="logo.png" alt="Lindyla Logo">
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
-          <li><a href="#"><i class="fa fa-utensils"></i> Menu</a></li>
-          <li><a href="#"><i class="fa fa-info-circle"></i> About</a></li>
-          <li><a href="#"><i class="fa fa-phone"></i> Contact</a></li>
-        </ul>
-      </nav>
-      <div class="header-controls">
-        <div class="search-container">
-          <i class="fa fa-search"></i>
-          <input type="text" id="search-bar" placeholder="Search dishes...">
-        </div>
-        <button id="vegetarian"><i class="fa fa-leaf"></i> Vegetarian</button>
-        <div class="cart-container">
-          <button id="cart-button"><i class="fa fa-shopping-cart"></i><span id="cart-count">0</span></button>
-          <span id="cart-total">$0.00</span>
-        </div>
+      <img src="lindyla take away logo.png" alt="Lindyla Logo">
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Menu</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <div class="cart-container">
+        <button id="cart-button"><i class="fa fa-shopping-cart"></i> <span id="cart-count">0</span></button>
+        <span id="cart-total">$0.00</span>
       </div>
     </div>
   </header>
 
   <main>
     <section class="menu-section">
-      <h2><i class="fa fa-fire"></i> Popular Dishes</h2>
+      <h2>Popular Dishes</h2>
       <div class="menu-grid">
         <div class="dish-card">
           <div class="dish-image" style="background-image: url('images/dish1.jpg');"></div>
           <div class="dish-info">
             <h3>Chicken Peri-Peri</h3>
-            <p>Grilled chicken with our secret spicy sauce.</p>
+            <p>Grilled chicken with secret spicy sauce.</p>
             <div class="dish-footer">
               <span class="price">$7.99</span>
-              <button class="add-to-cart"><i class="fa fa-cart-plus"></i> Add</button>
+              <button class="add-to-cart">Add</button>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <section class="payment-options">
+      <button onclick="payWithVisa()">Pay with Visa</button>
+      <button onclick="payWithMpesa()">Pay with M-Pesa</button>
+      <button onclick="payWithEmola()">Pay with eMola</button>
+    </section>
   </main>
 
   <footer>
-    <div class="footer-content">
-      <div>
-        <h3>About Us</h3>
-        <p>Your favorite neighborhood takeaway offering delicious and fresh meals.</p>
-      </div>
-      <div>
-        <h3>Contact</h3>
-        <p><i class="fa fa-phone"></i> +123 456 7890</p>
-        <p><i class="fa fa-envelope"></i> info@lindyla.com</p>
-      </div>
-    </div>
-    <div class="copyright">
-      &copy; 2025 Lindyla Take Away. All rights reserved.
-    </div>
+    <p>&copy; 2025 Lindyla Take Away. All rights reserved.</p>
   </footer>
 
   <script>
-    function hideQRScreen() {
-      const qr = document.getElementById('qr-screen');
-      qr.classList.add('fade-out');
-      setTimeout(() => qr.style.display = 'none', 1000);
+    let cartCount = 0;
+    let cartTotal = 0;
+    const dishPrice = 7.99;
+    const cartCountEl = document.getElementById("cart-count");
+    const cartTotalEl = document.getElementById("cart-total");
+
+    document.querySelectorAll(".add-to-cart").forEach(button => {
+      button.addEventListener("click", () => {
+        cartCount++;
+        cartTotal += dishPrice;
+        cartCountEl.textContent = cartCount;
+        cartTotalEl.textContent = `$${cartTotal.toFixed(2)}`;
+      });
+    });
+
+    function payWithVisa() {
+      alert(`You will be redirected to Visa card payment. Total: $${cartTotal.toFixed(2)}`);
+    }
+
+    function payWithMpesa() {
+      const phone = prompt("Enter your M-Pesa number:");
+      if (phone) alert(`M-Pesa payment initiated for $${cartTotal.toFixed(2)} to ${phone}`);
+    }
+
+    function payWithEmola() {
+      const phone = prompt("Enter your eMola number:");
+      if (phone) alert(`eMola payment initiated for $${cartTotal.toFixed(2)} to ${phone}`);
     }
   </script>
-  <script src="script.js"></script>
 </body>
 </html>
