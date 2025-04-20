@@ -246,6 +246,27 @@ $1
   </footer>
 
   <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    let cartCount = 0;
+    let cartTotal = 0;
+
+    const dishPrice = 7.99;
+    const cartCountEl = document.getElementById("cart-count");
+    const cartTotalEl = document.getElementById("cart-total");
+
+    const addButtons = document.querySelectorAll(".add-to-cart");
+    addButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        cartCount++;
+        cartTotal += dishPrice;
+
+        cartCountEl.textContent = cartCount;
+        cartTotalEl.textContent = `$${cartTotal.toFixed(2)}`;
+      });
+    });
+  });
+</script>
+
     function hideQRScreen() {
       const qr = document.getElementById('qr-screen');
       qr.classList.add('fade-out');
