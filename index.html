@@ -1,616 +1,306 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lindyla Take Away</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    :root {
-      --rosa: #ff66a3;
-      --rosa-claro: #ffe0ec;
-      --fundo: #fff0f5;
-      --texto: #4b2e2e;
-      --escuro: #1e1e2f;
-      --texto-escuro: #ffb6d5;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: var(--fundo);
-      color: var(--texto);
-      transition: background 0.3s, color 0.3s;
-    }
-
-    body.dark-mode {
-      background-color: var(--escuro);
-      color: var(--texto-escuro);
-    }
-
-    header {
-      background-color: var(--rosa);
-      padding: 1rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-
-    .header-content {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-    }
-
-    .header-content img {
-      max-height: 60px;
-      border-radius: 50%;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1rem;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .nav-links a[href^="#"] {
-      cursor: pointer;
-    }
-
-    .cart-container {
-      color: white;
-      font-weight: bold;
-    }
-
-    .hero {
-      padding: 4rem 2rem;
-      text-align: center;
-      background-color: var(--rosa-claro);
-      animation: fadeIn 1s ease;
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      margin: 1rem 0 2rem;
-    }
-
-    .hero button {
-      background-color: var(--rosa);
-      color: white;
-      padding: 0.75rem 2rem;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-
-    .menu-section {
-      padding: 2rem;
-      text-align: center;
-      animation: fadeIn 1s ease;
-    }
-
-    .menu-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-    }
-
-    .dish-card {
-      background-color: white;
-      border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(255, 105, 180, 0.2);
-      width: 250px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.2s;
-    }
-
-    .dish-card:hover {
-      transform: scale(1.03);
-    }
-
-    .dish-image {
-      height: 150px;
-      background-size: cover;
-      background-position: center;
-    }
-
-    .dish-info {
-      padding: 1rem;
-    }
-
-    .dish-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 0.5rem;
-    }
-
-    .add-to-cart {
-      background-color: var(--rosa);
-      color: white;
-      border: none;
-      padding: 6px 12px;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-
-    .add-to-cart:hover {
-      background-color: #e60073;
-    }
-
-    .payment-options {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin: 2rem;
-    }
-
-    .payment-options button, #dark-toggle {
-      background-color: #fff;
-      border: 2px solid var(--rosa);
-      color: var(--rosa);
-      padding: 10px 20px;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .payment-options button:hover, #dark-toggle:hover {
-      background-color: var(--rosa);
-      color: white;
-    }
-
-    #payment-method {
-      max-width: 400px;
-      margin: 0 auto;
-      background-color: var(--rosa-claro);
-      border-radius: 12px;
-      padding: 1rem 2rem;
-      display: none;
-      text-align: left;
-      animation: fadeIn 0.6s ease-in-out;
-      color: var(--texto);
-    }
-
-    body.dark-mode #payment-method {
-      background-color: #2a2a3d;
-      color: var(--texto-escuro);
-    }
-
-    footer {
-      background-color: var(--rosa);
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 3rem;
-    }
-
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lindyla Takeaway</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>body { font-family: 'Poppins', sans-serif; }</style>
 </head>
-<body>
-  <!DOCTYPE html>
-<html lang="pt">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lindyla Take Away</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <style>
-    :root {
-      --rosa: #ff4081;
-      --rosa-claro: #ffe4ec;
-      --cinza: #f9f9f9;
-      --texto: #3a2e3b;
-      --escuro: #121212;
-      --fundo-escuro: #1e1e1e;
-      --texto-escuro: #f0f0f0;
-      --card-escuro: #2a2a2a;
-      --rosa-escuro: #ff669a;
-      --sombra: 0 8px 30px rgba(0, 0, 0, 0.08);
-    }
+<body class="bg-red-50 text-gray-900">
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--cinza);
-      color: var(--texto);
-      transition: background 0.5s, color 0.5s;
-    }
-
-    body.dark-mode {
-      background: var(--fundo-escuro);
-      color: var(--texto-escuro);
-    }
-
-    body.dark-mode .menu-section,
-    body.dark-mode .dish-card,
-    body.dark-mode #payment-method {
-      background: var(--card-escuro);
-      color: var(--texto-escuro);
-    }
-
-    body.dark-mode .add-to-cart,
-    body.dark-mode .payment-options button {
-      background: var(--rosa-escuro);
-      border-color: var(--rosa-escuro);
-      color: white;
-    }
-
-    header {
-      background: linear-gradient(135deg, var(--rosa), #ec407a);
-      padding: 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      box-shadow: var(--sombra);
-    }
-
-    .header-content {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-    }
-
-    .header-content img {
-      height: 60px;
-      border-radius: 50%;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1rem;
-    }
-
-    .nav-links a {
-      color: white;
-      font-weight: 600;
-      text-decoration: none;
-      position: relative;
-    }
-
-    .nav-links a::after {
-      content: '';
-      display: block;
-      height: 2px;
-      width: 0;
-      background: white;
-      transition: width 0.3s;
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    .cart-container {
-      color: white;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .cart-container button {
-      background: white;
-      color: var(--rosa);
-      border: none;
-      padding: 8px 14px;
-      border-radius: 30px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    .hero {
-      background: var(--rosa-claro);
-      padding: 6rem 2rem;
-      text-align: center;
-      animation: fadeIn 1s ease-in-out;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-    }
-
-    .hero button {
-      background: var(--rosa);
-      color: white;
-      padding: 1rem 2rem;
-      border: none;
-      border-radius: 30px;
-      font-weight: 600;
-      font-size: 1.1rem;
-      cursor: pointer;
-      transition: background 0.3s, transform 0.3s;
-    }
-
-    .hero button:hover {
-      background: #e91e63;
-      transform: scale(1.05);
-    }
-
-    .menu-section {
-      padding: 4rem 2rem;
-      text-align: center;
-      background: white;
-      transition: background 0.5s, color 0.5s;
-    }
-
-    .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2.5rem;
-      margin-top: 2rem;
-    }
-
-    .dish-card {
-      background: #fff;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: var(--sombra);
-      transition: transform 0.3s, background 0.5s, color 0.5s;
-    }
-
-    .dish-card:hover {
-      transform: translateY(-8px);
-    }
-
-    .dish-image {
-      height: 180px;
-      background-size: cover;
-      background-position: center;
-    }
-
-    .dish-info {
-      padding: 1.5rem;
-    }
-
-    .dish-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 1rem;
-    }
-
-    .add-to-cart {
-      background: var(--rosa);
-      color: white;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    .add-to-cart:hover {
-      background: #d81b60;
-    }
-
-    .payment-options {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin: 3rem 0;
-    }
-
-    .payment-options button {
-      padding: 0.75rem 1.5rem;
-      background: transparent;
-      border: 2px solid var(--rosa);
-      color: var(--rosa);
-      border-radius: 10px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: all 0.3s;
-    }
-
-    .payment-options button:hover {
-      background: var(--rosa);
-      color: white;
-    }
-
-    #payment-method {
-      background: var(--rosa-claro);
-      padding: 2rem;
-      margin: 2rem auto;
-      max-width: 450px;
-      border-radius: 20px;
-      box-shadow: var(--sombra);
-      display: none;
-      animation: fadeIn 0.6s ease-in-out;
-    }
-
-    footer {
-      background: var(--rosa);
-      color: white;
-      text-align: center;
-      padding: 2rem 1rem;
-      margin-top: 4rem;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <div class="header-content">
-      <img src="lindyla-logo.png" alt="Logo Lindyla">
-      <ul class="nav-links">
-        <li><a href="#inicio">Início</a></li>
-        <li><a href="#cardapio">Cardápio</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
+  <!-- Navigation -->
+  <nav class="bg-white shadow">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="text-red-600 font-bold text-xl">Lindyla Takeaway</a>
+      <div class="space-x-6">
+        <a href="index.html" class="text-gray-700 hover:text-red-600">Home</a>
+        <a href="spicy.html" class="text-gray-700 hover:text-red-600">Spicy Chicken</a>
+        <a href="loaded_fries.html" class="text-gray-700 hover:text-red-600">Loaded Fries</a>
+        <a href="classic_combo.html" class="text-gray-700 hover:text-red-600">Classic Combo</a>
+      </div>
     </div>
-    <div class="cart-container">
-      <button id="dark-toggle"><i class="fas fa-moon"></i></button>
-      🛒 <span id="cart-count">0</span> | Total: <span id="cart-total">MZN 0.00</span>
-    </div>
-  </header>
+  </nav>
 
-  <section id="inicio" class="hero">
-    <h1>Bem-vinda ao Lindyla Take Away</h1>
-    <p>Comida deliciosa, feita com carinho, entregue até você 💖</p>
-    <button onclick="document.getElementById('cardapio').scrollIntoView({ behavior: 'smooth' })">Entrar</button>
+  <!-- Hero -->
+  <section class="bg-red-600 text-white text-center py-20 px-4">
+    <h1 class="text-5xl font-extrabold mb-4">Welcome to Lindyla Takeaway</h1>
+    <p class="text-lg mb-8">Delicious food. Delivered fast. Served with love.</p>
+    <a href="#menu" class="bg-white text-red-600 font-semibold px-6 py-3 rounded-full shadow hover:bg-gray-100 transition">Explore Our Menu</a>
   </section>
 
-  <main>
-    <section id="cardapio" class="menu-section">
-      <h2>Pratos Especiais</h2>
-      <div class="menu-grid" id="menu"></div>
-    </section>
+  <!-- About -->
+  <section class="py-16 px-6 md:px-20 bg-white text-center">
+    <h2 class="text-3xl font-bold mb-6">About Us</h2>
+    <p class="text-gray-700 max-w-2xl mx-auto">
+      Lindyla Takeaway is your go-to destination for fresh and flavorful meals. Whether you're craving a quick snack or a full dinner, we deliver happiness to your doorstep. Our mission? Good food, good vibes, and great service — every single day.
+    </p>
+  </section>
 
-    <section class="payment-options">
-      <button onclick="mostrarPagamento('Visa')"><i class="fab fa-cc-visa"></i> Visa</button>
-      <button onclick="mostrarPagamento('M-Pesa')"><i class="fas fa-mobile-alt"></i> M-Pesa</button>
-      <button onclick="mostrarPagamento('eMola')"><i class="fas fa-wallet"></i> eMola</button>
-    </section>
+  <!-- Menu Preview -->
+  <section id="menu" class="py-16 px-6 md:px-20 bg-red-100">
+    <h2 class="text-3xl font-bold text-center mb-10">Customer Favorites</h2>
+    <div class="flex flex-col md:flex-row gap-8">
+      <!-- Spicy Chicken Burger -->
+      <div class="flex-1 bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-4">Spicy Chicken Burger</h3>
+        <ul class="text-gray-600 space-y-2 text-sm text-left">
+          <li>Classic Spicy Chicken</li>
+          <li>Buffalo Fire Burger</li>
+          <li>Hot Honey Crunch</li>
+          <li>Sriracha Blaze</li>
+          <li>Cheesy Chili Chicken</li>
+          <li>Chipotle Smokehouse</li>
+          <li>Peri-Peri Delight</li>
+          <li>BBQ Inferno Stack</li>
+          <li>Double Jalapeño Kick</li>
+          <li>Korean Hot Chicken</li>
+          <li>Smoky Garlic Heat</li>
+          <li>Ghost Pepper Melt</li>
+        </ul>
+      </div>
+      <!-- Loaded Fries -->
+      <div class="flex-1 bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-4">Loaded Fries</h3>
+        <ul class="text-gray-600 space-y-2 text-sm text-left">
+          <li>Classic Cheese Fries</li>
+          <li>Chili Beef Overload</li>
+          <li>Jalapeño Cheese Burst</li>
+          <li>BBQ Bacon & Ranch</li>
+          <li>Garlic Truffle Fries</li>
+          <li>Spicy Mexican Street Fries</li>
+          <li>Butter Chicken Fries</li>
+          <li>Buffalo Chicken Crumble</li>
+          <li>Pulled Pork & Slaw</li>
+          <li>Cheesy Veggie Supreme</li>
+          <li>Curry Explosion</li>
+          <li>Philly Cheesesteak Fries</li>
+        </ul>
+      </div>
+      <!-- Classic Combo -->
+      <div class="flex-1 bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-4">Classic Combo</h3>
+        <ul class="text-gray-600 space-y-2 text-sm text-left">
+          <li>Beef Burger Combo</li>
+          <li>Chicken Fillet Combo</li>
+          <li>Veggie Burger Meal</li>
+          <li>Fish & Chips Combo</li>
+          <li>Double Patty Delight</li>
+          <li>Cheesy Chicken Stack</li>
+          <li>Crispy Tenders Trio</li>
+          <li>Classic Breakfast Box</li>
+          <li>Wings & Wedges Deal</li>
+          <li>Falafel Wrap Combo</li>
+          <li>Pepperoni Pizza Slice Box</li>
+          <li>Grilled Chicken Wrap Set</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-    <div id="payment-method"></div>
+  <!-- Contact CTA -->
+  <section class="bg-white py-20 px-6 md:px-20 text-center">
+    <h2 class="text-3xl font-bold mb-4">Ready to Order?</h2>
+    <p class="mb-8 text-gray-700">Scan the QR code on our flyers or visit our app to get started!</p>
+    <a href="#" class="bg-red-600 text-white font-semibold px-6 py-3 rounded-full shadow hover:bg-red-700 transition">Order Now</a>
+  </section>
 
-    <section id="sobre" class="menu-section">
-      <h2>Sobre Nós</h2>
-      <p>Lindyla Take Away é um projeto feito com amor, trazendo sabores únicos para você saborear em casa.</p>
-    </section>
-
-    <section id="contato" class="menu-section">
-      <h2>Contato</h2>
-      <p>Email: atendimento@lindyla.com</p>
-      <p>WhatsApp: +258 84 000 0000</p>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Lindyla Take Away. Todos os direitos reservados.</p>
+  <!-- Footer -->
+  <footer class="bg-red-600 text-white text-center py-6">
+    <p class="text-sm">&copy; 2025 Lindyla Takeaway. All rights reserved.</p>
   </footer>
 
-  <audio id="click-sound" src="https://cdn.pixabay.com/audio/2022/03/15/audio_4353c1e4e0.mp3"></audio>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spicy Chicken Selection - Lindyla Takeaway</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>body { font-family: 'Poppins', sans-serif; }</style>
+</head>
+<body class="bg-red-50 text-gray-900">
+  <nav class="bg-white shadow">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="text-red-600 font-bold text-xl">Lindyla Takeaway</a>
+      <div class="space-x-6">
+        <a href="index.html" class="text-gray-700 hover:text-red-600">Home</a>
+        <a href="spicy.html" class="text-gray-700 hover:text-red-600">Spicy Chicken</a>
+        <a href="loaded_fries.html" class="text-gray-700 hover:text-red-600">Loaded Fries</a>
+        <a href="classic_combo.html" class="text-gray-700 hover:text-red-600">Classic Combo</a>
+      </div>
+    </div>
+  </nav>
 
-  <script>
-    const pratos = [
-      { nome: "Frango Grelhado", preco: 500, img: "images/prato1.png" },
-      { nome: "Pizza Marguerita", preco: 600, img: "images/prato2.png" },
-      { nome: "Cheeseburger", preco: 450, img: "images/prato3.png" },
-      { nome: "Lasanha de Carne", preco: 550, img: "images/prato4.png" },
-      { nome: "Espaguete ao Alho", preco: 400, img: "images/prato5.png" },
-       { nome: "Arroz à Grega", preco: 350, img: "images/prato6.png" },
-    { nome: "Camarão Frito", preco: 750, img: "images/prato1.png" },
-    { nome: "Cachorro-Quente", preco: 300, img: "images/prato2.png" },
-    { nome: "Tosta Mista", preco: 250, img: "images/prato3.png" },
-    { nome: "Bife Acebolado", preco: 550, img: "images/prato4.png" },
-    { nome: "Kebab de Frango", preco: 500, img: "images/prato5.png" },
-    { nome: "Feijoada", preco: 600, img: "images/prato6.png" },
-    { nome: "Moamba de Galinha", preco: 650, img: "images/prato1.png" },
-    { nome: "Chamuças", preco: 200, img: "images/prato2.png" },
-    { nome: "Matapa", preco: 400, img: "images/prato3.png" },
-    { nome: "Pudim de Leite", preco: 300, img: "images/prato4.png" },
-    { nome: "Gelado de Baunilha", preco: 280, img: "images/prato5.png" },
-    { nome: "Mousse de Chocolate", preco: 320, img: "images/prato6.png" },
-    { nome: "Frango à Cafreal", preco: 620, img: "images/prato1.png" },
-    { nome: "Pão com Chouriço", preco: 240, img: "images/prato2.png" },
-    { nome: "Batatas Fritas", preco: 200, img: "images/prato3.png" },
-    { nome: "Coxinhas", preco: 250, img: "images/prato4.png" }
-  ];
-    
-    let contador = 0;
-    let total = 0;
+  <section class="py-12 px-6 md:px-20">
+    <h1 class="text-4xl font-bold text-center text-red-600 mb-10">Spicy Chicken Burger Selection</h1>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center">
+        <img src="https://source.unsplash.com/300x200/?spicy,chicken,burger" alt="Classic Spicy Chicken" class="rounded-lg mb-4 w-full h-auto"/>
+        <h2 class="text-lg font-semibold">Classic Spicy Chicken</h2>
+      </div>
+      <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center">
+        <img src="https://source.unsplash.com/300x200/?buffalo,burger" alt="Buffalo Fire Burger" class="rounded-lg mb-4 w-full h-auto"/>
+        <h2 class="text-lg font-semibold">Buffalo Fire Burger</h2>
+      </div>
+      <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center">
+        <img src="https://source.unsplash.com/300x200/?honey,spicy,chicken" alt="Hot Honey Crunch" class="rounded-lg mb-4 w-full h-auto"/>
+        <h2 class="text-lg font-semibold">Hot Honey Crunch</h2>
+      </div>
+      <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center">
+        <img src="https://source.unsplash.com/300x200/?sriracha,spicy,burger" alt="Sriracha Blaze" class="rounded-lg mb-4 w-full h-auto"/>
+        <h2 class="text-lg font-semibold">Sriracha Blaze</h2>
+      </div>
+      <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center">
+        <img src="https://source.unsplash.com/300x200/?cheese,spicy,chicken" alt="Cheesy Chili Chicken" class="rounded-lg mb-4 w-full h-auto"/>
+        <h2 class="text-lg font-semibold">Cheesy Chili Chicken</h2>
+      </div>
+      <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center">
+        <img src="https://source.unsplash.com/300x200/?chipotle,spicy,chicken" alt="Chipotle Smokehouse" class="rounded-lg mb-4 w-full h-auto"/>
+        <h2 class="text-lg font-semibold">Chipotle Smokehouse</h2>
+      </div>
+      <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center">
+        <img src="https://source.unsplash.com/300x200/?peri,spicy,chicken" alt="Peri-Peri Delight" class="rounded-lg mb-4 w-full h-auto"/>
+        <h2 class="text-lg font-semibold">Peri-Peri Delight</h2>
+      </div>
+      <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center">
+        <img src="https://source.unsplash.com/300x200/?bbq,spicy,burger" alt="BBQ Inferno Stack" class="rounded-lg mb-4 w-full h-auto"/>
+        <h2 class="text-lg font-semibold">BBQ Inferno Stack</h2>
+      </div>
+      <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center">
+        <img src="https://source.unsplash.com/300x200/?jalapeno,spicy,burger" alt="Double Jalapeño Kick" class="rounded-lg mb-4 w-full h-auto"/>
+        <h2 class="text-lg font-semibold">Double Jalapeño Kick</h2>
+      </div>
+      <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center">
+        <img src="https://source.unsplash.com/300x200/?korean,spicy,chicken" alt="Korean Hot Chicken" class="rounded-lg mb-4 w-full h-auto"/>
+        <h2 class="text-lg font-semibold">Korean Hot Chicken</h2>
+      </div>
+      <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center">
+        <img src="https://source.unsplash.com/300x200/?garlic,spicy,chicken" alt="Smoky Garlic Heat" class="rounded-lg mb-4 w-full h-auto"/>
+        <h2 class="text-lg font-semibold">Smoky Garlic Heat</h2>
+      </div>
+      <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center">
+        <img src="https://source.unsplash.com/300x200/?ghost,pepper,burger" alt="Ghost Pepper Melt" class="rounded-lg mb-4 w-full h-auto"/>
+        <h2 class="text-lg font-semibold">Ghost Pepper Melt</h2>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Loaded Fries Selection - Lindyla Takeaway</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>body { font-family: 'Poppins', sans-serif; }</style>
+</head>
+<body class="bg-yellow-50 text-gray-900">
+  <nav class="bg-white shadow">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="text-red-600 font-bold text-xl">Lindyla Takeaway</a>
+      <div class="space-x-6">
+        <a href="index.html" class="text-gray-700 hover:text-red-600">Home</a>
+        <a href="spicy.html" class="text-gray-700 hover:text-red-600">Spicy Chicken</a>
+        <a href="loaded_fries.html" class="text-gray-700 hover:text-red-600">Loaded Fries</a>
+        <a href="classic_combo.html" class="text-gray-700 hover:text-red-600">Classic Combo</a>
+      </div>
+    </div>
+  </nav>
 
-    const menu = document.getElementById('menu');
-    const elContador = document.getElementById("cart-count");
-    const elTotal = document.getElementById("cart-total");
-    const som = document.getElementById("click-sound");
-    const pagamento = document.getElementById("payment-method");
-
-    pratos.forEach(p => {
-      const card = document.createElement('div');
-      card.className = 'dish-card';
-      card.innerHTML = `
-        <div class="dish-image" style="background-image: url('${p.img}')"></div>
-        <div class="dish-info">
-          <h3>${p.nome}</h3>
-          <p>Uma delícia de sabor único!</p>
-          <div class="dish-footer">
-            <span>MZN ${p.preco}</span>
-            <button class="add-to-cart" onclick="adicionar(${p.preco})"><i class='fas fa-plus'></i> Adicionar</button>
-          </div>
-        </div>
-      `;
-      menu.appendChild(card);
-    });
-
-    function adicionar(preco) {
-      contador++;
-      total += preco;
-      elContador.textContent = contador;
-      elTotal.textContent = `MZN ${total.toFixed(2)}`;
-      som.play();
-    }
-
-    function mostrarPagamento(metodo) {
-      pagamento.style.display = "block";
-      pagamento.innerHTML = `
-        <h3>Pagamento com ${metodo}</h3>
-        <p>Total: <strong>MZN ${total.toFixed(2)}</strong></p>
-        <label>Digite seu número (${metodo}):</label><br>
-        <input type="text" placeholder="Número..." style="width:100%; margin: 10px 0;"><br>
-        <button onclick="confirmarPagamento('${metodo}')">Confirmar</button>
-        <button onclick="pagamento.style.display='none'" style="margin-left:10px">Cancelar</button>
-      `;
-    }
-
-    function confirmarPagamento(metodo) {
-      alert(`Pagamento com ${metodo} realizado com sucesso!`);
-      contador = 0;
-      total = 0;
-      elContador.textContent = "0";
-      elTotal.textContent = "MZN 0.00";
-      pagamento.style.display = "none";
-    }
-
-    document.getElementById("dark-toggle").addEventListener("click", () => {
-      document.body.classList.toggle("dark-mode");
-    });
-  </script>
+  <section class="py-12 px-6 md:px-20">
+    <h1 class="text-4xl font-bold text-center text-yellow-600 mb-10">Loaded Fries Selection</h1>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center">
+        <img src="https://source.unsplash.com/300x200/?cheese,fries" alt="Classic Cheese Fries" class="rounded-lg mb-4 w-full h-auto"/>
+        <h2 class="text-lg font-semibold">Classic Cheese Fries</h2>
+      </div>
+      <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center">
+        <img src="https://source.unsplash.com/300x200/?chili,fries" alt="Chili Beef Overload" class="rounded-lg mb-4 w-full h-auto"/>
+        <h2 class="text-lg font-semibold">Chili Beef Overload</h2>
+      </div>
+      <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center">
+        <img src="https://source.unsplash.com/300x200/?jalapeno,fries" alt="Jalapeño Cheese Burst" class="rounded-lg mb-4 w-full h-auto"/>
+        <h2 class="text-lg font-semibold">Jalapeño Cheese Burst</h2>
+      </div>
+      <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center">
+        <img src="https://source.unsplash.com/300x200/?bbq,bacon" alt="BBQ Bacon & Ranch" class="rounded-lg mb-4 w-full h-auto"/>
+        <h2 class="text-lg font-semibold">BBQ Bacon & Ranch</h2>
+      </div>
+      <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center">
+        <img src="https://source.unsplash.com/300x200/?garlic,truffle" alt="Garlic Truffle Fries" class="rounded-lg mb-4 w-full h-auto"/>
+        <h2 class="text-lg font-semibold">Garlic Truffle Fries</h2>
+      </div>
+      <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center">
+        <img src="https://source.unsplash.com/300x200/?mexican,fries" alt="Spicy Mexican Street Fries" class="rounded-lg mb-4 w-full h-auto"/>
+        <h2 class="text-lg font-semibold">Spicy Mexican Street Fries</h2>
+      </div>
+      <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center">
+        <img src="https://source.unsplash.com/300x200/?butter,chicken,fries" alt="Butter Chicken Fries" class="rounded-lg mb-4 w-full h-auto"/>
+        <h2 class="text-lg font-semibold">Butter Chicken Fries</h2>
+      </div>
+      <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center">
+        <img src="https://source.unsplash.com/300x200/?buffalo,chicken" alt="Buffalo Chicken Crumble" class="rounded-lg mb-4 w-full h-auto"/>
+        <h2 class="text-lg font-semibold">Buffalo Chicken Crumble</h2>
+      </div>
+      <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center">
+        <img src="https://source.unsplash.com/300x200/?pulled,pork,fries" alt="Pulled Pork & Slaw" class="rounded-lg mb-4 w-full h-auto"/>
+        <h2 class="text-lg font-semibold">Pulled Pork & Slaw</h2>
+      </div>
+      <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center">
+        <img src="https://source.unsplash.com/300x200/?cheese,fries,veggie" alt="Cheesy Veggie Supreme" class="rounded-lg mb-4 w-full h-auto"/>
+        <h2 class="text-lg font-semibold">Cheesy Veggie Supreme</h2>
+      </div>
+      <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center">
+        <img src="https://source.unsplash.com/300x200/?curry,fries" alt="Curry Explosion" class="rounded-lg mb-4 w-full h-auto"/>
+        <h2 class="text-lg font-semibold">Curry Explosion</h2>
+      </div>
+      <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center">
+        <img src="https://source.unsplash.com/300x200/?philly,cheesesteak" alt="Philly Cheesesteak Fries" class="rounded-lg mb-4 w-full h-auto"/>
+        <h2 class="text-lg font-semibold">Philly Cheesesteak Fries</h2>
+      </div>
+    </div>
+  </section>
 </body>
 </html>
 
-</body>
-</html>
+<section id="writers" class="profiles-section">
+  <div class="container">
+    <h2>Writers</h2>
+    <p>Our team of wordsmiths crafts compelling narratives across every medium.</p>
 
-  
+    <div class="profiles-grid">
+      <!-- Example writer card -->
+      <div class="profile-card">
+        <img src="images/writer1.jpg" alt="Writer Name">
+        <h3>Writer Name</h3>
+        <p>Short bio or specialty (e.g. “Fiction & Screenplays”)…</p>
+      </div>
+
+      <!-- Add more writer cards here -->
+      <div class="profile-card">
+        <img src="images/writer2.jpg" alt="Writer Name">
+        <h3>Writer Name</h3>
+        <p>Short bio or specialty…</p>
+      </div>
+      <!-- etc. -->
+    </div>
+  </div>
+</section>
+- <li><a href="#designers">Designers</a></li>
++ <li><a href="#designers">Designers</a></li>
++ <li><a href="#writers">Writers</a></li>
+
+
+
+
+
+
+
+
