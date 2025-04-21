@@ -209,6 +209,265 @@
   </style>
 </head>
 <body>
+  <!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lindyla Take Away</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+    :root {
+      --rosa: #ff4081;
+      --rosa-claro: #ffe4ec;
+      --cinza: #f9f9f9;
+      --texto: #3a2e3b;
+      --escuro: #121212;
+      --fundo-escuro: #1e1e1e;
+      --texto-escuro: #f0f0f0;
+      --card-escuro: #2a2a2a;
+      --rosa-escuro: #ff669a;
+      --sombra: 0 8px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--cinza);
+      color: var(--texto);
+      transition: background 0.5s, color 0.5s;
+    }
+
+    body.dark-mode {
+      background: var(--fundo-escuro);
+      color: var(--texto-escuro);
+    }
+
+    body.dark-mode .menu-section,
+    body.dark-mode .dish-card,
+    body.dark-mode #payment-method {
+      background: var(--card-escuro);
+      color: var(--texto-escuro);
+    }
+
+    body.dark-mode .add-to-cart,
+    body.dark-mode .payment-options button {
+      background: var(--rosa-escuro);
+      border-color: var(--rosa-escuro);
+      color: white;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--rosa), #ec407a);
+      padding: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      box-shadow: var(--sombra);
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .header-content img {
+      height: 60px;
+      border-radius: 50%;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .nav-links a {
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      display: block;
+      height: 2px;
+      width: 0;
+      background: white;
+      transition: width 0.3s;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .cart-container {
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .cart-container button {
+      background: white;
+      color: var(--rosa);
+      border: none;
+      padding: 8px 14px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .hero {
+      background: var(--rosa-claro);
+      padding: 6rem 2rem;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero button {
+      background: var(--rosa);
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .hero button:hover {
+      background: #e91e63;
+      transform: scale(1.05);
+    }
+
+    .menu-section {
+      padding: 4rem 2rem;
+      text-align: center;
+      background: white;
+      transition: background 0.5s, color 0.5s;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2.5rem;
+      margin-top: 2rem;
+    }
+
+    .dish-card {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--sombra);
+      transition: transform 0.3s, background 0.5s, color 0.5s;
+    }
+
+    .dish-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .dish-image {
+      height: 180px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .dish-info {
+      padding: 1.5rem;
+    }
+
+    .dish-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1rem;
+    }
+
+    .add-to-cart {
+      background: var(--rosa);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .add-to-cart:hover {
+      background: #d81b60;
+    }
+
+    .payment-options {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 3rem 0;
+    }
+
+    .payment-options button {
+      padding: 0.75rem 1.5rem;
+      background: transparent;
+      border: 2px solid var(--rosa);
+      color: var(--rosa);
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .payment-options button:hover {
+      background: var(--rosa);
+      color: white;
+    }
+
+    #payment-method {
+      background: var(--rosa-claro);
+      padding: 2rem;
+      margin: 2rem auto;
+      max-width: 450px;
+      border-radius: 20px;
+      box-shadow: var(--sombra);
+      display: none;
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    footer {
+      background: var(--rosa);
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 4rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
   <header>
     <div class="header-content">
       <img src="lindyla-logo.png" alt="Logo Lindyla">
@@ -351,3 +610,7 @@
 </body>
 </html>
 
+</body>
+</html>
+
+  
