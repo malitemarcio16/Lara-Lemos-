@@ -1,36 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Lindyla Take Away</title>
-  <link rel="stylesheet" href="all.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    :root {
+      --rosa: #ff66a3;
+      --rosa-claro: #ffe0ec;
+      --fundo: #fff0f5;
+      --texto: #4b2e2e;
+      --escuro: #1e1e2f;
+      --texto-escuro: #ffb6d5;
+    }
+
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #fff0f0;
-      color: #333;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--fundo);
+      color: var(--texto);
+      transition: background 0.3s, color 0.3s;
+    }
+
+    body.dark-mode {
+      background-color: var(--escuro);
+      color: var(--texto-escuro);
     }
 
     header {
-      background-color: #e60000;
-      padding: 1rem;
-      color: white;
-      text-align: center;
+      background-color: var(--rosa);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
     }
 
     .header-content img {
-      max-height: 80px;
+      max-height: 60px;
+      border-radius: 50%;
     }
 
     .nav-links {
       display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      margin-top: 0.5rem;
+      gap: 1rem;
       list-style: none;
+      margin: 0;
       padding: 0;
     }
 
@@ -40,14 +62,15 @@
       font-weight: bold;
     }
 
-    .cart-container, .search-container, #vegetarian {
-      margin: 10px auto;
-      display: inline-block;
+    .cart-container {
+      color: white;
+      font-weight: bold;
     }
 
     .menu-section {
       padding: 2rem;
       text-align: center;
+      animation: fadeIn 1s ease;
     }
 
     .menu-grid {
@@ -59,12 +82,17 @@
 
     .dish-card {
       background-color: white;
-      border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(255, 105, 180, 0.2);
       width: 250px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
+      transition: transform 0.2s;
+    }
+
+    .dish-card:hover {
+      transform: scale(1.03);
     }
 
     .dish-image {
@@ -85,115 +113,189 @@
     }
 
     .add-to-cart {
-      background-color: #e60000;
+      background-color: var(--rosa);
       color: white;
       border: none;
       padding: 6px 12px;
-      border-radius: 6px;
+      border-radius: 8px;
       cursor: pointer;
     }
 
-    footer {
-      background-color: #e60000;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
+    .add-to-cart:hover {
+      background-color: #e60073;
     }
 
     .payment-options {
       display: flex;
       justify-content: center;
       gap: 1rem;
-      margin-top: 2rem;
+      margin: 2rem;
     }
 
-    .payment-options button {
+    .payment-options button, #dark-toggle {
       background-color: #fff;
-      border: 2px solid #e60000;
-      color: #e60000;
+      border: 2px solid var(--rosa);
+      color: var(--rosa);
       padding: 10px 20px;
       border-radius: 8px;
       font-weight: bold;
       cursor: pointer;
+    }
+
+    .payment-options button:hover, #dark-toggle:hover {
+      background-color: var(--rosa);
+      color: white;
+    }
+
+    #payment-method {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: var(--rosa-claro);
+      border-radius: 12px;
+      padding: 1rem 2rem;
+      display: none;
+      text-align: left;
+      animation: fadeIn 0.6s ease-in-out;
+      color: var(--texto);
+    }
+
+    body.dark-mode #payment-method {
+      background-color: #2a2a3d;
+      color: var(--texto-escuro);
+    }
+
+    footer {
+      background-color: var(--rosa);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 3rem;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
     }
   </style>
 </head>
 <body>
   <header>
     <div class="header-content">
-      <img src="lindyla take away logo.png" alt="Lindyla Logo">
+      <img src="lindyla-logo.png" alt="Logo Lindyla">
       <ul class="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Menu</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Cardápio</a></li>
+        <li><a href="#">Sobre</a></li>
+        <li><a href="#">Contato</a></li>
       </ul>
-      <div class="cart-container">
-        <button id="cart-button"><i class="fa fa-shopping-cart"></i> <span id="cart-count">0</span></button>
-        <span id="cart-total">$0.00</span>
-      </div>
+    </div>
+    <div class="cart-container">
+      <button id="dark-toggle"><i class="fas fa-moon"></i></button>
+      🛒 <span id="cart-count">0</span> | Total: <span id="cart-total">MZN 0.00</span>
     </div>
   </header>
-
   <main>
     <section class="menu-section">
-      <h2>Popular Dishes</h2>
-      <div class="menu-grid">
-        <div class="dish-card">
-          <div class="dish-image" style="background-image: url('images/frango.png');"></div>
-          <div class="dish-info">
-            <h3>Chicken Peri-Peri</h3>
-            <p>Grilled chicken with secret spicy sauce.</p>
-            <div class="dish-footer">
-              <span class="price">$7.99</span>
-              <button class="add-to-cart">Add</button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <h2>Pratos Especiais</h2>
+      <div class="menu-grid" id="menu"></div>
     </section>
 
     <section class="payment-options">
-      <button onclick="payWithVisa()">Pay with Visa</button>
-      <button onclick="payWithMpesa()">Pay with M-Pesa</button>
-      <button onclick="payWithEmola()">Pay with eMola</button>
+      <button onclick="pagar('Visa')"><i class="fab fa-cc-visa"></i> Visa</button>
+      <button onclick="pagar('M-Pesa')"><i class="fas fa-mobile-alt"></i> M-Pesa</button>
+      <button onclick="pagar('eMola')"><i class="fas fa-wallet"></i> eMola</button>
     </section>
+
+    <div id="payment-method"></div>
   </main>
-
   <footer>
-    <p>&copy; 2025 Lindyla Take Away. All rights reserved.</p>
+    <p>&copy; 2025 Lindyla Take Away. Todos os direitos reservados.</p>
   </footer>
-
+  <audio id="click-sound" src="https://cdn.pixabay.com/audio/2022/03/15/audio_4353c1e4e0.mp3"></audio>
   <script>
-    let cartCount = 0;
-    let cartTotal = 0;
-    const dishPrice = 7.99;
-    const cartCountEl = document.getElementById("cart-count");
-    const cartTotalEl = document.getElementById("cart-total");
+    const pratos = Array.from({ length: 22 }, (_, i) => ({
+      nome: `Prato ${i + 1}`,
+      preco: 200 + i * 25,
+      img: `images/prato${(i % 6) + 1}.png`
+    }));
 
-    document.querySelectorAll(".add-to-cart").forEach(button => {
-      button.addEventListener("click", () => {
-        cartCount++;
-        cartTotal += dishPrice;
-        cartCountEl.textContent = cartCount;
-        cartTotalEl.textContent = `$${cartTotal.toFixed(2)}`;
-      });
+    let contador = 0;
+    let total = 0;
+
+    const menu = document.getElementById('menu');
+    const elContador = document.getElementById("cart-count");
+    const elTotal = document.getElementById("cart-total");
+    const pagamento = document.getElementById("payment-method");
+    const som = document.getElementById("click-sound");
+
+    pratos.forEach(p => {
+      const card = document.createElement('div');
+      card.className = 'dish-card';
+      card.innerHTML = `
+        <div class="dish-image" style="background-image: url('${p.img}')"></div>
+        <div class="dish-info">
+          <h3>${p.nome}</h3>
+          <p>Delicioso e fresquinho!</p>
+          <div class="dish-footer">
+            <span>MZN ${p.preco}</span>
+            <button class="add-to-cart" onclick="adicionar(${p.preco})"><i class='fas fa-plus'></i> Adicionar</button>
+          </div>
+        </div>
+      `;
+      menu.appendChild(card);
     });
 
-    function payWithVisa() {
-      alert(`You will be redirected to Visa card payment. Total: $${cartTotal.toFixed(2)}`);
+    function adicionar(preco) {
+      contador++;
+      total += preco;
+      elContador.textContent = contador;
+      elTotal.textContent = `MZN ${total.toFixed(2)}`;
+      som.play();
     }
 
-    function payWithMpesa() {
-      const phone = prompt("Enter your M-Pesa number:");
-      if (phone) alert(`M-Pesa payment initiated for $${cartTotal.toFixed(2)} to ${phone}`);
+    function pagar(metodo) {
+      pagamento.style.display = "block";
+      pagamento.innerHTML = `
+        <h3>Pagamento com ${metodo}</h3>
+        <p>Total: <strong>MZN ${total.toFixed(2)}</strong></p>
+        <label>Número ${metodo === 'Visa' ? 'do cartão' : 'de telemóvel'}:</label>
+        <input type="text" id="ref-input" placeholder="${metodo === 'Visa' ? 'XXXX-XXXX-XXXX-XXXX' : '84XXXXXXX'}" style="width:100%; margin:10px 0"><br>
+        <button onclick="mostrarConfirmacao('${metodo}')">Continuar</button>
+        <button onclick="voltarPagamento()" style="margin-left: 10px">Voltar</button>
+      `;
     }
 
-    function payWithEmola() {
-      const phone = prompt("Enter your eMola number:");
-      if (phone) alert(`eMola payment initiated for $${cartTotal.toFixed(2)} to ${phone}`);
+    function voltarPagamento() {
+      pagamento.style.display = "none";
     }
+
+    function mostrarConfirmacao(metodo) {
+      const ref = document.getElementById("ref-input").value;
+      if (!ref) {
+        alert("Por favor, preencha o número corretamente.");
+        return;
+      }
+      pagamento.innerHTML = `
+        <h3>Confirmar Pagamento</h3>
+        <p>Você está prestes a pagar <strong>MZN ${total.toFixed(2)}</strong> com ${metodo}.</p>
+        <p>Número informado: ${ref}</p>
+        <button onclick="confirmarPagamento('${metodo}')">Confirmar Agora</button>
+        <button onclick="voltarPagamento()" style="margin-left: 10px">Cancelar</button>
+      `;
+    }
+
+    function confirmarPagamento(metodo) {
+      alert(`Pagamento com ${metodo} realizado com sucesso!`);
+      contador = 0;
+      total = 0;
+      elContador.textContent = "0";
+      elTotal.textContent = "MZN 0.00";
+      pagamento.style.display = "none";
+    }
+
+    document.getElementById("dark-toggle").addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+    });
   </script>
 </body>
 </html>
