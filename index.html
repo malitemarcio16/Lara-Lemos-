@@ -3,366 +3,244 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lindyla Takeaway</title>
+  <title>Lindyla Takeaway 💕</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet"/>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>body { font-family: 'Poppins', sans-serif; }</style>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    .sweet-shadow {
+      box-shadow: 0 4px 10px rgba(255, 182, 193, 0.3);
+    }
+  </style>
 </head>
-<body class="bg-red-50 text-gray-900">
+<body class="bg-pink-50 text-pink-900 scroll-smooth">
 
-  <!-- Navigation -->
-  <nav class="bg-white shadow">
+  <!-- 🌸 Navigation -->
+  <nav class="bg-white sweet-shadow sticky top-0 z-50">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <a href="index.html" class="text-red-600 font-bold text-xl">Lindyla Takeaway</a>
+      <a href="#home" class="text-pink-600 font-bold text-xl">Lindyla Takeaway 💕</a>
       <div class="space-x-6">
-        <a href="index.html" class="text-gray-700 hover:text-red-600">Home</a>
-        <a href="spicy.html" class="text-gray-700 hover:text-red-600">Spicy Chicken</a>
-        <a href="loaded_fries.html" class="text-gray-700 hover:text-red-600">Loaded Fries</a>
-        <a href="classic_combo.html" class="text-gray-700 hover:text-red-600">Classic Combo</a>
+        <a href="#home" class="text-pink-700 hover:text-pink-500 transition">Home</a>
+        <a href="#spicy" class="text-pink-700 hover:text-pink-500 transition">Spicy Chicken</a>
+        <a href="#fries" class="text-pink-700 hover:text-pink-500 transition">Loaded Fries</a>
+        <a href="#combo" class="text-pink-700 hover:text-pink-500 transition">Classic Combo</a>
       </div>
     </div>
   </nav>
 
-  <!-- Hero -->
-  <section class="bg-red-600 text-white text-center py-20 px-4">
-    <h1 class="text-5xl font-extrabold mb-4">Welcome to Lindyla Takeaway</h1>
-    <p class="text-lg mb-8">Delicious food. Delivered fast. Served with love.</p>
-    <a href="#menu" class="bg-white text-red-600 font-semibold px-6 py-3 rounded-full shadow hover:bg-gray-100 transition">Explore Our Menu</a>
-  </section>
-
-  <!-- About -->
-  <section class="py-16 px-6 md:px-20 bg-white text-center">
-    <h2 class="text-3xl font-bold mb-6">About Us</h2>
-    <p class="text-gray-700 max-w-2xl mx-auto">
-      Lindyla Takeaway is your go-to destination for fresh and flavorful meals. Whether you're craving a quick snack or a full dinner, we deliver happiness to your doorstep. Our mission? Good food, good vibes, and great service — every single day.
+  <!-- 💖 Hero Section -->
+  <section id="home" class="bg-pink-100 text-center py-20 px-6">
+    <h1 class="text-5xl font-extrabold text-pink-700 mb-4">Welcome to Lindyla Takeaway 💗</h1>
+    <p class="text-lg max-w-xl mx-auto">
+      Where every bite is sprinkled with joy, flavor and a little sparkle ✨<br/>
+      Get ready to fall in love with food all over again!
     </p>
+    <a href="#combo" class="mt-6 inline-block bg-pink-600 text-white font-semibold px-6 py-3 rounded-full shadow hover:bg-pink-700 transition">
+      Explore Menu 🍔
+    </a>
   </section>
+<!-- 🌶️ Spicy Chicken Section -->
+<section id="spicy" class="py-16 px-6 md:px-20 bg-white">
+  <h2 class="text-4xl font-extrabold text-center text-pink-600 mb-10">Spicy Chicken Selection 🌶️🍗</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
-  <!-- Menu Preview -->
-  <section id="menu" class="py-16 px-6 md:px-20 bg-red-100">
-    <h2 class="text-3xl font-bold text-center mb-10">Customer Favorites</h2>
-    <div class="flex flex-col md:flex-row gap-8">
-      <!-- Spicy Chicken Burger -->
-      <div class="flex-1 bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
-        <h3 class="text-xl font-semibold mb-4">Spicy Chicken Burger</h3>
-        <ul class="text-gray-600 space-y-2 text-sm text-left">
-          <li>Classic Spicy Chicken</li>
-          <li>Buffalo Fire Burger</li>
-          <li>Hot Honey Crunch</li>
-          <li>Sriracha Blaze</li>
-          <li>Cheesy Chili Chicken</li>
-          <li>Chipotle Smokehouse</li>
-          <li>Peri-Peri Delight</li>
-          <li>BBQ Inferno Stack</li>
-          <li>Double Jalapeño Kick</li>
-          <li>Korean Hot Chicken</li>
-          <li>Smoky Garlic Heat</li>
-          <li>Ghost Pepper Melt</li>
-        </ul>
-      </div>
-      <!-- Loaded Fries -->
-      <div class="flex-1 bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
-        <h3 class="text-xl font-semibold mb-4">Loaded Fries</h3>
-        <ul class="text-gray-600 space-y-2 text-sm text-left">
-          <li>Classic Cheese Fries</li>
-          <li>Chili Beef Overload</li>
-          <li>Jalapeño Cheese Burst</li>
-          <li>BBQ Bacon & Ranch</li>
-          <li>Garlic Truffle Fries</li>
-          <li>Spicy Mexican Street Fries</li>
-          <li>Butter Chicken Fries</li>
-          <li>Buffalo Chicken Crumble</li>
-          <li>Pulled Pork & Slaw</li>
-          <li>Cheesy Veggie Supreme</li>
-          <li>Curry Explosion</li>
-          <li>Philly Cheesesteak Fries</li>
-        </ul>
-      </div>
-      <!-- Classic Combo -->
-      <div class="flex-1 bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
-        <h3 class="text-xl font-semibold mb-4">Classic Combo</h3>
-        <ul class="text-gray-600 space-y-2 text-sm text-left">
-          <li>Beef Burger Combo</li>
-          <li>Chicken Fillet Combo</li>
-          <li>Veggie Burger Meal</li>
-          <li>Fish & Chips Combo</li>
-          <li>Double Patty Delight</li>
-          <li>Cheesy Chicken Stack</li>
-          <li>Crispy Tenders Trio</li>
-          <li>Classic Breakfast Box</li>
-          <li>Wings & Wedges Deal</li>
-          <li>Falafel Wrap Combo</li>
-          <li>Pepperoni Pizza Slice Box</li>
-          <li>Grilled Chicken Wrap Set</li>
-        </ul>
-      </div>
+    <div class="bg-pink-100 rounded-2xl sweet-shadow p-4 text-center">
+      <img src="https://source.unsplash.com/300x200/?spicy,chicken,burger" alt="Classic Spicy Chicken" class="rounded-lg mb-4 w-full h-auto"/>
+      <h3 class="text-lg font-semibold">Classic Spicy Chicken 🌶️</h3>
     </div>
-  </section>
 
-  <!-- Contact CTA -->
-  <section class="bg-white py-20 px-6 md:px-20 text-center">
-    <h2 class="text-3xl font-bold mb-4">Ready to Order?</h2>
-    <p class="mb-8 text-gray-700">Scan the QR code on our flyers or visit our app to get started!</p>
-    <a href="#" class="bg-red-600 text-white font-semibold px-6 py-3 rounded-full shadow hover:bg-red-700 transition">Order Now</a>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-red-600 text-white text-center py-6">
-    <p class="text-sm">&copy; 2025 Lindyla Takeaway. All rights reserved.</p>
-  </footer>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Spicy Chicken Selection - Lindyla Takeaway</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet"/>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>body { font-family: 'Poppins', sans-serif; }</style>
-</head>
-<body class="bg-red-50 text-gray-900">
-  <nav class="bg-white shadow">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <a href="index.html" class="text-red-600 font-bold text-xl">Lindyla Takeaway</a>
-      <div class="space-x-6">
-        <a href="index.html" class="text-gray-700 hover:text-red-600">Home</a>
-        <a href="spicy.html" class="text-gray-700 hover:text-red-600">Spicy Chicken</a>
-        <a href="loaded_fries.html" class="text-gray-700 hover:text-red-600">Loaded Fries</a>
-        <a href="classic_combo.html" class="text-gray-700 hover:text-red-600">Classic Combo</a>
-      </div>
+    <div class="bg-pink-100 rounded-2xl sweet-shadow p-4 text-center">
+      <img src="https://source.unsplash.com/300x200/?buffalo,burger" alt="Buffalo Fire Burger" class="rounded-lg mb-4 w-full h-auto"/>
+      <h3 class="text-lg font-semibold">Buffalo Fire Burger 🔥</h3>
     </div>
-  </nav>
 
-  <section class="py-12 px-6 md:px-20">
-    <h1 class="text-4xl font-bold text-center text-red-600 mb-10">Spicy Chicken Burger Selection</h1>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center">
-        <img src="https://source.unsplash.com/300x200/?spicy,chicken,burger" alt="Classic Spicy Chicken" class="rounded-lg mb-4 w-full h-auto"/>
-        <h2 class="text-lg font-semibold">Classic Spicy Chicken</h2>
-      </div>
-      <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center">
-        <img src="https://source.unsplash.com/300x200/?buffalo,burger" alt="Buffalo Fire Burger" class="rounded-lg mb-4 w-full h-auto"/>
-        <h2 class="text-lg font-semibold">Buffalo Fire Burger</h2>
-      </div>
-      <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center">
-        <img src="https://source.unsplash.com/300x200/?honey,spicy,chicken" alt="Hot Honey Crunch" class="rounded-lg mb-4 w-full h-auto"/>
-        <h2 class="text-lg font-semibold">Hot Honey Crunch</h2>
-      </div>
-      <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center">
-        <img src="https://source.unsplash.com/300x200/?sriracha,spicy,burger" alt="Sriracha Blaze" class="rounded-lg mb-4 w-full h-auto"/>
-        <h2 class="text-lg font-semibold">Sriracha Blaze</h2>
-      </div>
-      <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center">
-        <img src="https://source.unsplash.com/300x200/?cheese,spicy,chicken" alt="Cheesy Chili Chicken" class="rounded-lg mb-4 w-full h-auto"/>
-        <h2 class="text-lg font-semibold">Cheesy Chili Chicken</h2>
-      </div>
-      <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center">
-        <img src="https://source.unsplash.com/300x200/?chipotle,spicy,chicken" alt="Chipotle Smokehouse" class="rounded-lg mb-4 w-full h-auto"/>
-        <h2 class="text-lg font-semibold">Chipotle Smokehouse</h2>
-      </div>
-      <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center">
-        <img src="https://source.unsplash.com/300x200/?peri,spicy,chicken" alt="Peri-Peri Delight" class="rounded-lg mb-4 w-full h-auto"/>
-        <h2 class="text-lg font-semibold">Peri-Peri Delight</h2>
-      </div>
-      <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center">
-        <img src="https://source.unsplash.com/300x200/?bbq,spicy,burger" alt="BBQ Inferno Stack" class="rounded-lg mb-4 w-full h-auto"/>
-        <h2 class="text-lg font-semibold">BBQ Inferno Stack</h2>
-      </div>
-      <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center">
-        <img src="https://source.unsplash.com/300x200/?jalapeno,spicy,burger" alt="Double Jalapeño Kick" class="rounded-lg mb-4 w-full h-auto"/>
-        <h2 class="text-lg font-semibold">Double Jalapeño Kick</h2>
-      </div>
-      <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center">
-        <img src="https://source.unsplash.com/300x200/?korean,spicy,chicken" alt="Korean Hot Chicken" class="rounded-lg mb-4 w-full h-auto"/>
-        <h2 class="text-lg font-semibold">Korean Hot Chicken</h2>
-      </div>
-      <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center">
-        <img src="https://source.unsplash.com/300x200/?garlic,spicy,chicken" alt="Smoky Garlic Heat" class="rounded-lg mb-4 w-full h-auto"/>
-        <h2 class="text-lg font-semibold">Smoky Garlic Heat</h2>
-      </div>
-      <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center">
-        <img src="https://source.unsplash.com/300x200/?ghost,pepper,burger" alt="Ghost Pepper Melt" class="rounded-lg mb-4 w-full h-auto"/>
-        <h2 class="text-lg font-semibold">Ghost Pepper Melt</h2>
-      </div>
+    <div class="bg-pink-100 rounded-2xl sweet-shadow p-4 text-center">
+      <img src="https://source.unsplash.com/300x200/?honey,spicy,chicken" alt="Hot Honey Crunch" class="rounded-lg mb-4 w-full h-auto"/>
+      <h3 class="text-lg font-semibold">Hot Honey Crunch 🍯</h3>
+    </
+<div class="bg-pink-100 rounded-2xl sweet-shadow p-4 text-center">
+      <img src="https://source.unsplash.com/300x200/?sriracha,burger" alt="Sriracha Blaze" class="rounded-lg mb-4 w-full h-auto"/>
+      <h3 class="text-lg font-semibold">Sriracha Blaze 🔥</h3>
     </div>
-  </section>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Loaded Fries Selection - Lindyla Takeaway</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet"/>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>body { font-family: 'Poppins', sans-serif; }</style>
-</head>
-<body class="bg-yellow-50 text-gray-900">
-  <nav class="bg-white shadow">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <a href="index.html" class="text-red-600 font-bold text-xl">Lindyla Takeaway</a>
-      <div class="space-x-6">
-        <a href="index.html" class="text-gray-700 hover:text-red-600">Home</a>
-        <a href="spicy.html" class="text-gray-700 hover:text-red-600">Spicy Chicken</a>
-        <a href="loaded_fries.html" class="text-gray-700 hover:text-red-600">Loaded Fries</a>
-        <a href="classic_combo.html" class="text-gray-700 hover:text-red-600">Classic Combo</a>
-      </div>
+
+    <div class="bg-pink-100 rounded-2xl sweet-shadow p-4 text-center">
+      <img src="https://source.unsplash.com/300x200/?cheese,spicy,chicken" alt="Cheesy Chili Chicken" class="rounded-lg mb-4 w-full h-auto"/>
+      <h3 class="text-lg font-semibold">Cheesy Chili Chicken 🧀🌶️</h3>
     </div>
-  </nav>
 
-  <section class="py-12 px-6 md:px-20">
-    <h1 class="text-4xl font-bold text-center text-yellow-600 mb-10">Loaded Fries Selection</h1>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center">
-        <img src="https://source.unsplash.com/300x200/?cheese,fries" alt="Classic Cheese Fries" class="rounded-lg mb-4 w-full h-auto"/>
-        <h2 class="text-lg font-semibold">Classic Cheese Fries</h2>
-      </div>
-      <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center">
-        <img src="https://source.unsplash.com/300x200/?chili,fries" alt="Chili Beef Overload" class="rounded-lg mb-4 w-full h-auto"/>
-        <h2 class="text-lg font-semibold">Chili Beef Overload</h2>
-      </div>
-      <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center">
-        <img src="https://source.unsplash.com/300x200/?jalapeno,fries" alt="Jalapeño Cheese Burst" class="rounded-lg mb-4 w-full h-auto"/>
-        <h2 class="text-lg font-semibold">Jalapeño Cheese Burst</h2>
-      </div>
-      <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center">
-        <img src="https://source.unsplash.com/300x200/?bbq,bacon" alt="BBQ Bacon & Ranch" class="rounded-lg mb-4 w-full h-auto"/>
-        <h2 class="text-lg font-semibold">BBQ Bacon & Ranch</h2>
-      </div>
-      <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center">
-        <img src="https://source.unsplash.com/300x200/?garlic,truffle" alt="Garlic Truffle Fries" class="rounded-lg mb-4 w-full h-auto"/>
-        <h2 class="text-lg font-semibold">Garlic Truffle Fries</h2>
-      </div>
-      <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center">
-        <img src="https://source.unsplash.com/300x200/?mexican,fries" alt="Spicy Mexican Street Fries" class="rounded-lg mb-4 w-full h-auto"/>
-        <h2 class="text-lg font-semibold">Spicy Mexican Street Fries</h2>
-      </div>
-      <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center">
-        <img src="https://source.unsplash.com/300x200/?butter,chicken,fries" alt="Butter Chicken Fries" class="rounded-lg mb-4 w-full h-auto"/>
-        <h2 class="text-lg font-semibold">Butter Chicken Fries</h2>
-      </div>
-      <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center">
-        <img src="https://source.unsplash.com/300x200/?buffalo,chicken" alt="Buffalo Chicken Crumble" class="rounded-lg mb-4 w-full h-auto"/>
-        <h2 class="text-lg font-semibold">Buffalo Chicken Crumble</h2>
-      </div>
-      <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center">
-        <img src="https://source.unsplash.com/300x200/?pulled,pork,fries" alt="Pulled Pork & Slaw" class="rounded-lg mb-4 w-full h-auto"/>
-        <h2 class="text-lg font-semibold">Pulled Pork & Slaw</h2>
-      </div>
-      <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center">
-        <img src="https://source.unsplash.com/300x200/?cheese,fries,veggie" alt="Cheesy Veggie Supreme" class="rounded-lg mb-4 w-full h-auto"/>
-        <h2 class="text-lg font-semibold">Cheesy Veggie Supreme</h2>
-      </div>
-      <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center">
-        <img src="https://source.unsplash.com/300x200/?curry,fries" alt="Curry Explosion" class="rounded-lg mb-4 w-full h-auto"/>
-        <h2 class="text-lg font-semibold">Curry Explosion</h2>
-      </div>
-      <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center">
-        <img src="https://source.unsplash.com/300x200/?philly,cheesesteak" alt="Philly Cheesesteak Fries" class="rounded-lg mb-4 w-full h-auto"/>
-        <h2 class="text-lg font-semibold">Philly Cheesesteak Fries</h2>
-      </div>
+    <div class="bg-pink-100 rounded-2xl sweet-shadow p-4 text-center">
+      <img src="https://source.unsplash.com/300x200/?chipotle,chicken" alt="Chipotle Smokehouse" class="rounded-lg mb-4 w-full h-auto"/>
+      <h3 class="text-lg font-semibold">Chipotle Smokehouse 🌪️</h3>
     </div>
-  </section>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Classic Combo Selection - Lindyla Takeaway</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet"/>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>body { font-family: 'Poppins', sans-serif; }</style>
-</head>
-<body class="bg-white text-gray-900">
-  <nav class="bg-white shadow">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <a href="index.html" class="text-red-600 font-bold text-xl">Lindyla Takeaway</a>
-      <div class="space-x-6">
-        <a href="index.html" class="text-gray-700 hover:text-red-600">Home</a>
-        <a href="spicy.html" class="text-gray-700 hover:text-red-600">Spicy Chicken</a>
-        <a href="loaded_fries.html" class="text-gray-700 hover:text-red-600">Loaded Fries</a>
-        <a href="classic_combo.html" class="text-gray-700 hover:text-red-600">Classic Combo</a>
-      </div>
+
+    <div class="bg-pink-100 rounded-2xl sweet-shadow p-4 text-center">
+      <img src="https://source.unsplash.com/300x200/?peri-peri,burger" alt="Peri-Peri Delight" class="rounded-lg mb-4 w-full h-auto"/>
+      <h3 class="text-lg font-semibold">Peri-Peri Delight 🔥🍗</h3>
     </div>
-  </nav>
 
-  <section class="py-12 px-6 md:px-20">
-    <h1 class="text-4xl font-bold text-center text-red-600 mb-10">Classic Combo Selection</h1>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div class="bg-red-50 rounded-xl shadow p-4 flex flex-col items-center">
-        <img src="https://source.unsplash.com/300x200/?burger,combo" alt="Beef Burger Combo" class="rounded-lg mb-4 w-full h-auto"/>
-        <h2 class="text-lg font-semibold">Beef Burger Combo</h2>
-      </div>
-      <div class="bg-red-50 rounded-xl shadow p-4 flex flex-col items-center">
-        <img src="https://source.unsplash.com/300x200/?chicken,burger,combo" alt="Chicken Fillet Combo" class="rounded-lg mb-4 w-full h-auto"/>
-        <h2 class="text-lg font-semibold">Chicken Fillet Combo</h2>
-      </div>
-      <div class="bg-red-50 rounded-xl shadow p-4 flex flex-col items-center">
-        <img src="https://source.unsplash.com/300x200/?veggie,burger" alt="Veggie Burger Meal" class="rounded-lg mb-4 w-full h-auto"/>
-        <h2 class="text-lg font-semibold">Veggie Burger Meal</h2>
-      </div>
-      <div class="bg-red-50 rounded-xl shadow p-4 flex flex-col items-center">
-        <img src="https://source.unsplash.com/300x200/?fish,chips" alt="Fish & Chips Combo" class="rounded-lg mb-4 w-full h-auto"/>
-        <h2 class="text-lg font-semibold">Fish & Chips Combo</h2>
-      </div>
-      <div class="bg-red-50 rounded-xl shadow p-4 flex flex-col items-center">
-        <img src="https://source.unsplash.com/300x200/?double,burger" alt="Double Patty Delight" class="rounded-lg mb-4 w-full h-auto"/>
-        <h2 class="text-lg font-semibold">Double Patty Delight</h2>
-      </div>
-      <div class="bg-red-50 rounded-xl shadow p-4 flex flex-col items-center">
-        <img src="https://source.unsplash.com/300x200/?cheese,chicken,combo" alt="Cheesy Chicken Stack" class="rounded-lg mb-4 w-full h-auto"/>
-        <h2 class="text-lg font-semibold">Cheesy Chicken Stack</h2>
-      </div>
-      <div class="bg-red-50 rounded-xl shadow p-4 flex flex-col items-center">
-        <img src="https://source.unsplash.com/300x200/?tenders,fries" alt="Crispy Tenders Trio" class="rounded-lg mb-4 w-full h-auto"/>
-        <h2 class="text-lg font-semibold">Crispy Tenders Trio</h2>
-      </div>
-      <div class="bg-red-50 rounded-xl shadow p-4 flex flex-col items-center">
-        <img src="https://source.unsplash.com/300x200/?breakfast,box" alt="Classic Breakfast Box" class="rounded-lg mb-4 w-full h-auto"/>
-        <h2 class="text-lg font-semibold">Classic Breakfast Box</h2>
-      </div>
-      <div class="bg-red-50 rounded-xl shadow p-4 flex flex-col items-center">
-        <img src="https://source.unsplash.com/300x200/?wings,wedges" alt="Wings & Wedges Deal" class="rounded-lg mb-4 w-full h-auto"/>
-        <h2 class="text-lg font-semibold">Wings & Wedges Deal</h2>
-      </div>
-      <div class="bg-red-50 rounded-xl shadow p-4 flex flex-col items-center">
-        <img src="https://source.unsplash.com/300x200/?falafel,wrap" alt="Falafel Wrap Combo" class="rounded-lg mb-4 w-full h-auto"/>
-        <h2 class="text-lg font-semibold">Falafel Wrap Combo</h2>
-      </div>
-      <div class="bg-red-50 rounded-xl shadow p-4 flex flex-col items-center">
-        <img src="https://source.unsplash.com/300x200/?pepperoni,pizza" alt="Pepperoni Pizza Slice Box" class="rounded-lg mb-4 w-full h-auto"/>
-        <h2 class="text-lg font-semibold">Pepperoni Pizza Slice Box</h2>
-      </div>
-      <div class="bg-red-50 rounded-xl shadow p-4 flex flex-col items-center">
-        <img src="https://source.unsplash.com/300x200/?grilled,chicken,wrap" alt="Grilled Chicken Wrap Set" class="rounded-lg mb-4 w-full h-auto"/>
-        <h2 class="text-lg font-semibold">Grilled Chicken Wrap Set</h2>
-      </div>
+    <div class="bg-pink-100 rounded-2xl sweet-shadow p-4 text-center">
+      <img src="https://source.unsplash.com/300x200/?bbq,burger" alt="BBQ Inferno Stack" class="rounded-lg mb-4 w-full h-auto"/>
+      <h3 class="text-lg font-semibold">BBQ Inferno Stack 🔥🍖</h3>
     </div>
-  </section>
-</body>
-</html>
 
-<section id="writers" class="profiles-section">
-  <div class="container">
-    <h2>Writers</h2>
-    <p>Our team of wordsmiths crafts compelling narratives across every medium.</p>
+    <div class="bg-pink-100 rounded-2xl sweet-shadow p-4 text-center">
+      <img src="https://source.unsplash.com/300x200/?jalapeno,burger" alt="Double Jalapeño Kick" class="rounded-lg mb-4 w-full h-auto"/>
+      <h3 class="text-lg font-semibold">Double Jalapeño Kick 🥵</h3>
+    </div>
 
-    <div class="profiles-grid">
-      <!-- Example writer card -->
-      <div class="profile-card">
-        <img src="images/writer1.jpg" alt="Writer Name">
-        <h3>Writer Name</h3>
-        <p>Short bio or specialty (e.g. “Fiction & Screenplays”)…</p>
-      </div>
+    <div class="bg-pink-100 rounded-2xl sweet-shadow p-4 text-center">
+      <img src="https://source.unsplash.com/300x200/?korean,spicy,chicken" alt="Korean Hot Chicken" class="rounded-lg mb-4 w-full h-auto"/>
+      <h3 class="text-lg font-semibold">Korean Hot Chicken 🇰🇷🔥</h3>
+    </div>
 
-      <!-- Add more writer cards here -->
-     
+    <div class="bg-pink-100 rounded-2xl sweet-shadow p-4 text-center">
+      <img src="https://source.unsplash.com/300x200/?garlic,spicy,chicken" alt="Smoky Garlic Heat" class="rounded-lg mb-4 w-full h-auto"/>
+      <h3 class="text-lg font-semibold">Smoky Garlic Heat 🧄🔥</h3>
+    </div>
+
+    <div class="bg-pink-100 rounded-2xl sweet-shadow p-4 text-center">
+      <img src="https://source.unsplash.com/300x200/?ghost,pepper,burger" alt="Ghost Pepper Melt" class="rounded-lg mb-4 w-full h-auto"/>
+      <h3 class="text-lg font-semibold">Ghost Pepper Melt 👻🌶️</h3>
+    </div>
+
+  </div>
+</section>
+<!-- 🍟 Loaded Fries Section -->
+<section id="fries" class="py-16 px-6 md:px-20 bg-pink-100">
+  <h2 class="text-4xl font-extrabold text-center text-pink-600 mb-10">Loaded Fries Selection 🍟💖</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    
+    <div class="bg-white rounded-2xl sweet-shadow p-4 text-center">
+      <img src="https://source.unsplash.com/300x200/?cheese,fries" alt="Classic Cheese Fries" class="rounded-lg mb-4 w-full h-auto"/>
+      <h3 class="text-lg font-semibold">Classic Cheese Fries 🧀</h3>
+    </div>
+
+    <div class="bg-white rounded-2xl sweet-shadow p-4 text-center">
+      <img src="https://source.unsplash.com/300x200/?chili,fries" alt="Chili Beef Overload" class="rounded-lg mb-4 w-full h-auto"/>
+      <h3 class="text-lg font-semibold">Chili Beef Overload 🌶️</h3>
+    </div>
+
+    <div class="bg-white rounded-2xl sweet-shadow p-4 text-center">
+      <img src="https://source.unsplash.com/300x200/?jalapeno,fries" alt="Jalapeño Cheese Burst" class="rounded-lg mb-4 w-full h-auto"/>
+      <h3 class="text-lg font-semibold">Jalapeño Cheese Burst 🌶️🧀</h3>
+    </div>
+
+    <div class="bg-white rounded-2xl sweet-shadow p-4 text-center">
+      <img src="https://source.unsplash.com/300x200/?bbq,bacon" alt="BBQ Bacon & Ranch" class="rounded-lg mb-4 w-full h-auto"/>
+      <h3 class="text-lg font-semibold">BBQ Bacon & Ranch 🍖</h3>
+    </div>
+
+    <div class="bg-white rounded-2xl sweet-shadow p-4 text-center">
+      <img src="https://source.unsplash.com/300x200/?garlic,truffle" alt="Garlic Truffle Fries" class="rounded-lg mb-4 w-full h-auto"/>
+      <h3 class="text-lg font-semibold">Garlic Truffle Fries 🧄✨</h3>
+    </div>
+
+    <div class="bg-white rounded-2xl sweet-shadow p-4 text-center">
+      <img src="https://source.unsplash.com/300x200/?mexican,fries" alt="Spicy Mexican Street Fries" class="rounded-lg mb-4 w-full h-auto"/>
+      <h3 class="text-lg font-semibold">Spicy Mexican Street Fries 🌮</h3>
+    </div>
+
+    <div class="bg-white rounded-2xl sweet-shadow p-4 text-center">
+      <img src="https://source.unsplash.com/300x200/?butter,chicken,fries" alt="Butter Chicken Fries" class="rounded-lg mb-4 w-full h-auto"/>
+      <h3 class="text-lg font-semibold">Butter Chicken Fries 🍗🧈</h3>
+    </div>
+
+    <div class="bg-white rounded-2xl sweet-shadow p-4 text-center">
+      <img src="https://source.unsplash.com/300x200/?buffalo,chicken" alt="Buffalo Chicken Crumble" class="rounded-lg mb-4 w-full h-auto"/>
+      <h3 class="text-lg font-semibold">Buffalo Chicken Crumble 🍗🔥</h3>
+    </div>
+
+    <div class="bg-white rounded-2xl sweet-shadow p-4 text-center">
+      <img src="https://source.unsplash.com/300x200/?pulled,pork,fries" alt="Pulled Pork & Slaw" class="rounded-lg mb-4 w-full h-auto"/>
+      <h3 class="text-lg font-semibold">Pulled Pork & Slaw 🍖🥗</h3>
+    </div>
+
+    <div class="bg-white rounded-2xl sweet-shadow p-4 text-center">
+      <img src="https://source.unsplash.com/300x200/?cheese,fries,veggie" alt="Cheesy Veggie Supreme" class="rounded-lg mb-4 w-full h-auto"/>
+      <h3 class="text-lg font-semibold">Cheesy Veggie Supreme 🧀🍅</h3>
+    </div>
+
+    <div class="bg-white rounded-2xl sweet-shadow p-4 text-center">
+      <img src="https://source.unsplash.com/300x200/?curry,fries" alt="Curry Explosion" class="rounded-lg mb-4 w-full h-auto"/>
+      <h3 class="text-lg font-semibold">Curry Explosion 🍛🌶️</h3>
+    </div>
+
+    <div class="bg-white rounded-2xl sweet-shadow p-4 text-center">
+      <img src="https://source.unsplash.com/300x200/?philly,cheesesteak" alt="Philly Cheesesteak Fries" class="rounded-lg mb-4 w-full h-auto"/>
+      <h3 class="text-lg font-semibold">Philly Cheesesteak Fries 🥩🧀</h3>
+    </div>
+
+  </div>
+</section>
+<!-- 🍔 Classic Combo Section -->
+<section id="combo" class="py-16 px-6 md:px-20 bg-pink-100">
+  <h2 class="text-4xl font-extrabold text-center text-pink-600 mb-10">Classic Combo Selection 🍔💖</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+    <div class="bg-white rounded-2xl sweet-shadow p-4 text-center">
+      <img src="https://source.unsplash.com/300x200/?burger,combo" alt="Beef Burger Combo" class="rounded-lg mb-4 w-full h-auto"/>
+      <h3 class="text-lg font-semibold">Beef Burger Combo 🍔</h3>
+    </div>
+
+    <div class="bg-white rounded-2xl sweet-shadow p-4 text-center">
+      <img src="https://source.unsplash.com/300x200/?chicken,burger,combo" alt="Chicken Fillet Combo" class="rounded-lg mb-4 w-full h-auto"/>
+      <h3 class="text-lg font-semibold">Chicken Fillet Combo 🍗</h3>
+    </div>
+
+    <div class="bg-white rounded-2xl sweet-shadow p-4 text-center">
+      <img src="https://source.unsplash.com/300x200/?veggie,burger" alt="Veggie Burger Meal" class="rounded-lg mb-4 w-full h-auto"/>
+      <h3 class="text-lg font-semibold">Veggie Burger Meal 🥗</h3>
+    </div>
+
+    <div class="bg-white rounded-2xl sweet-shadow p-4 text-center">
+      <img src="https://source.unsplash.com/300x200/?fish,chips" alt="Fish & Chips Combo" class="rounded-lg mb-4 w-full h-auto"/>
+      <h3 class="text-lg font-semibold">Fish & Chips Combo 🐟🍟</h3>
+    </div>
+
+    <div class="bg-white rounded-2xl sweet-shadow p-4 text-center">
+      <img src="https://source.unsplash.com/300x200/?double,burger" alt="Double Patty Delight" class="rounded-lg mb-4 w-full h-auto"/>
+      <h3 class="text-lg font-semibold">Double Patty Delight 🍔🍔</h3>
+    </div>
+
+    <div class="bg-white rounded-2xl sweet-shadow p-4 text-center">
+      <img src="https://source.unsplash.com/300x200/?cheese,chicken,combo" alt="Cheesy Chicken Stack" class="rounded-lg mb-4 w-full h-auto"/>
+      <h3 class="text-lg font-semibold">Cheesy Chicken Stack 🧀🍗</h3>
+    </div>
+
+    <div class="bg-white rounded-2xl sweet-shadow p-4 text-center">
+      <img src="https://source.unsplash.com/300x200/?tenders,fries" alt="Crispy Tenders Trio" class="rounded-lg mb-4 w-full h-auto"/>
+      <h3 class="text-lg font-semibold">Crispy Tenders Trio 🍗🍟</h3>
+    </div>
+
+    <div class="bg-white rounded-2xl sweet-shadow p-4 text-center">
+      <img src="https://source.unsplash.com/300x200/?breakfast,box" alt="Classic Breakfast Box" class="rounded-lg mb-4 w-full h-auto"/>
+      <h3 class="text-lg font-semibold">Classic Breakfast Box 🍳🥓</h3>
+    </div>
+
+    <div class="bg-white rounded-2xl sweet-shadow p-4 text-center">
+      <img src="https://source.unsplash.com/300x200/?wings,wedges" alt="Wings & Wedges Deal" class="rounded-lg mb-4 w-full h-auto"/>
+      <h3 class="text-lg font-semibold">Wings & Wedges Deal 🍗🍟</h3>
+    </div>
+
+    <div class="bg-white rounded-2xl sweet-shadow p-4 text-center">
+      <img src="https://source.unsplash.com/300x200/?falafel,wrap" alt="Falafel Wrap Combo" class="rounded-lg mb-4 w-full h-auto"/>
+      <h3 class="text-lg font-semibold">Falafel Wrap Combo 🌯</h3>
+    </div>
+
+    <div class="bg-white rounded-2xl sweet-shadow p-4 text-center">
+      <img src="https://source.unsplash.com/300x200/?pepperoni,pizza" alt="Pepperoni Pizza Slice Box" class="rounded-lg mb-4 w-full h-auto"/>
+      <h3 class="text-lg font-semibold">Pepperoni Pizza Slice Box 🍕</h3>
+    </div>
+
+    <div class="bg-white rounded-2xl sweet-shadow p-4 text-center">
+      <img src="https://source.unsplash.com/300x200/?grilled,chicken,wrap" alt="Grilled Chicken Wrap Set" class="rounded-lg mb-4 w-full h-auto"/>
+      <h3 class="text-lg font-semibold">Grilled Chicken Wrap Set 🌯🍗</h3>
+    </div>
+
+  </div>
+</section>
 
 
 
