@@ -1,248 +1,279 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lindyla Takeaway 💕</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet"/>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lindyla Take Away</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
   <style>
-    body {
-      font-family: 'Poppins', sans-serif;
+    :root {
+      --rosa: #e26d9e;
+      --creme: #fff6f0;
+      --baunilha: #fce9e1;
+      --texto: #4b2e2e;
+      --dourado: #c9a36e;
+      --escuro: #1f1b24;
+      --texto-escuro: #f5f5f5;
     }
-    .sweet-shadow {
-      box-shadow: 0 4px 10px rgba(255, 182, 193, 0.3);
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--creme);
+      color: var(--texto);
+      margin: rink 0e;
+      padding: 0;
+      transition: background 0.4s, color 0.4s;
+    }
+
+    body.dark-mode {
+      background: var(--escuro);
+      color: var(--texto-escuro);
+    }
+
+    header {
+      background: linear-gradient(to right, var(--rosa), var(--dourado));
+      padding: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    header img {
+      height: 60px;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin: 0;
+    }
+
+    .hero {
+      padding: 4rem 2rem;
+      text-align: center;
+      background: var(--baunilha);
+    }
+
+    .hero button {
+      background: var(--rosa);
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 40px;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    .hero button:hover {
+      background: #d35a8b;
+      transform: translateY(-2px);
+    }
+
+    section {
+      padding: 3rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .dish {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      text-align: center;
+    }
+
+    .dish:hover {
+      transform: translateY(-5px);
+    }
+
+    .dish img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .dish-info {
+      padding: 1rem;
+    }
+
+    .dish-info h3 {
+      margin: 0.5rem 0;
+      font-size: 1.2rem;
+    }
+
+    .dish-info p {
+      font-weight: bold;
+      color: var(--rosa);
+    }
+
+    .dish button {
+      margin-top: 0.5rem;
+      background: var(--rosa);
+      color: white;
+      border: none;
+      border-radius: 20px;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      background: var(--rosa);
+      color: white;
+      padding: 2rem;
+      border-top-left-radius: 30px;
+      border-top-right-radius: 30px;
+    }
+
+    .payment-section {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .payment-section button {
+      margin: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border: 2px solid var(--rosa);
+      background: transparent;
+      color: var(--rosa);
+      font-weight: bold;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .payment-section button:hover {
+      background: var(--rosa);
+      color: white;
+    }
+
+    #total {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-top: 1rem;
     }
   </style>
 </head>
-<body class="bg-pink-50 text-pink-900 scroll-smooth">
+<body>
+  <header>
+    <img src="images/logo.png" alt="Logo Lindyla">
+    <h1>Lindyla Take Away</h1>
+  </header>
 
-  <!-- 🌸 Navigation -->
-  <nav class="bg-white sweet-shadow sticky top-0 z-50">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <a href="#home" class="text-pink-600 font-bold text-xl">Lindyla Takeaway 💕</a>
-      <div class="space-x-6">
-        <a href="#home" class="text-pink-700 hover:text-pink-500 transition">Home</a>
-        <a href="#spicy" class="text-pink-700 hover:text-pink-500 transition">Spicy Chicken</a>
-        <a href="#fries" class="text-pink-700 hover:text-pink-500 transition">Loaded Fries</a>
-        <a href="#combo" class="text-pink-700 hover:text-pink-500 transition">Classic Combo</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- 💖 Hero Section -->
-  <section id="home" class="bg-pink-100 text-center py-20 px-6">
-    <h1 class="text-5xl font-extrabold text-pink-700 mb-4">Welcome to Lindyla Takeaway 💗</h1>
-    <p class="text-lg max-w-xl mx-auto">
-      Where every bite is sprinkled with joy, flavor and a little sparkle ✨<br/>
-      Get ready to fall in love with food all over again!
-    </p>
-    <a href="#combo" class="mt-6 inline-block bg-pink-600 text-white font-semibold px-6 py-3 rounded-full shadow hover:bg-pink-700 transition">
-      Explore Menu 🍔
-    </a>
+  <section class="hero">
+    <h2>Bem-vinda!</h2>
+    <p>Descubra um menu feito com delicadeza e sabor</p>
+    <button onclick="document.getElementById('cardapio').scrollIntoView({ behavior: 'smooth' })">Explorar o Cardápio</button>
   </section>
-<!-- 🌶️ Spicy Chicken Section -->
-<section id="spicy" class="py-16 px-6 md:px-20 bg-white">
-  <h2 class="text-4xl font-extrabold text-center text-pink-600 mb-10">Spicy Chicken Selection 🌶️🍗</h2>
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
-    <div class="bg-pink-100 rounded-2xl sweet-shadow p-4 text-center">
-      <img src="https://source.unsplash.com/300x200/?spicy,chicken,burger" alt="Classic Spicy Chicken" class="rounded-lg mb-4 w-full h-auto"/>
-      <h3 class="text-lg font-semibold">Classic Spicy Chicken 🌶️</h3>
+  <section id="cardapio">
+    <h2>Cardápio</h2>
+    <div class="menu-grid" id="menu"></div>
+    <div class="payment-section">
+      <h3>Total: <span id="total">MZN 0</span></h3>
+      <button onclick="finalizarCompra('Cartão')">Pagar com Cartão</button>
+      <button onclick="finalizarCompra('M-Pesa')">Pagar com M-Pesa</button>
+      <button onclick="finalizarCompra('eMola')">Pagar com eMola</button>
     </div>
+  </section>
 
-    <div class="bg-pink-100 rounded-2xl sweet-shadow p-4 text-center">
-      <img src="https://source.unsplash.com/300x200/?buffalo,burger" alt="Buffalo Fire Burger" class="rounded-lg mb-4 w-full h-auto"/>
-      <h3 class="text-lg font-semibold">Buffalo Fire Burger 🔥</h3>
-    </div>
+  <section>
+    <h2>Sobre Nós</h2>
+    <p style="max-width: 700px; margin: auto; text-align: center;">
+      A Lindyla nasceu do sonho de levar a cozinha doce e acolhedora para mais perto de si. Aqui cada prato é preparado com amor, simplicidade e um toque de carinho, como manda a tradição.
+    </p>
+  </section>
 
-    <div class="bg-pink-100 rounded-2xl sweet-shadow p-4 text-center">
-      <img src="https://source.unsplash.com/300x200/?honey,spicy,chicken" alt="Hot Honey Crunch" class="rounded-lg mb-4 w-full h-auto"/>
-      <h3 class="text-lg font-semibold">Hot Honey Crunch 🍯</h3>
-    </
-<div class="bg-pink-100 rounded-2xl sweet-shadow p-4 text-center">
-      <img src="https://source.unsplash.com/300x200/?sriracha,burger" alt="Sriracha Blaze" class="rounded-lg mb-4 w-full h-auto"/>
-      <h3 class="text-lg font-semibold">Sriracha Blaze 🔥</h3>
-    </div>
+  <footer>
+    <p>&copy; 2025 Lindyla Take Away • Desenvolvido com 💖</p>
+  </footer>
 
-    <div class="bg-pink-100 rounded-2xl sweet-shadow p-4 text-center">
-      <img src="https://source.unsplash.com/300x200/?cheese,spicy,chicken" alt="Cheesy Chili Chicken" class="rounded-lg mb-4 w-full h-auto"/>
-      <h3 class="text-lg font-semibold">Cheesy Chili Chicken 🧀🌶️</h3>
-    </div>
+  <script>
+    const menuItens = [
+      // Fast Food
+      { nome: "Hambúrguer Clássico", preco: 450, img: "images/prato1.png" },
+      { nome: "Pizza Pepperoni", preco: 600, img: "images/prato2.png" },
+      { nome: "Wrap de Frango", preco: 400, img: "images/prato3.png" },
+      { nome: "Batata Frita", preco: 250, img: "images/prato4.png" },
+      { nome: "Tosta Mista", preco: 300, img: "images/prato5.png" },
+      { nome: "Kebab de Carne", preco: 550, img: "images/prato6.png" },
+      { nome: "Cachorro Quente", preco: 350, img: "images/prato1.png" },
+      { nome: "Nuggets de Frango", preco: 280, img: "images/prato2.png" },
+      { nome: "Pizza 4 Queijos", preco: 620, img: "images/prato3.png" },
+      { nome: "Frango Frito", preco: 470, img: "images/prato4.png" },
+      { nome: "Sanduíche de Atum", preco: 390, img: "images/prato5.png" },
 
-    <div class="bg-pink-100 rounded-2xl sweet-shadow p-4 text-center">
-      <img src="https://source.unsplash.com/300x200/?chipotle,chicken" alt="Chipotle Smokehouse" class="rounded-lg mb-4 w-full h-auto"/>
-      <h3 class="text-lg font-semibold">Chipotle Smokehouse 🌪️</h3>
-    </div>
+      // Bebidas
+      { nome: "Sumo de Laranja", preco: 150, img: "images/prato6.png" },
+      { nome: "Coca-Cola", preco: 120, img: "images/prato1.png" },
+      { nome: "Pepsi", preco: 120, img: "images/prato2.png" },
+      { nome: "Fanta", preco: 120, img: "images/prato3.png" },
+      { nome: "Água Mineral", preco: 100, img: "images/prato4.png" },
+      { nome: "Sumo de Manga", preco: 150, img: "images/prato5.png" },
+      { nome: "Chá Gelado", preco: 130, img: "images/prato6.png" },
+      { nome: "Café Gelado", preco: 140, img: "images/prato1.png" },
+      { nome: "Sumo Detox", preco: 180, img: "images/prato2.png" },
+      { nome: "Smoothie de Morango", preco: 200, img: "images/prato3.png" },
+      { nome: "Leite com Chocolate", preco: 160, img: "images/prato4.png" }
+    ];
 
-    <div class="bg-pink-100 rounded-2xl sweet-shadow p-4 text-center">
-      <img src="https://source.unsplash.com/300x200/?peri-peri,burger" alt="Peri-Peri Delight" class="rounded-lg mb-4 w-full h-auto"/>
-      <h3 class="text-lg font-semibold">Peri-Peri Delight 🔥🍗</h3>
-    </div>
+    let total = 0;
+    const menuContainer = document.getElementById('menu');
+    const totalDisplay = document.getElementById('total');
 
-    <div class="bg-pink-100 rounded-2xl sweet-shadow p-4 text-center">
-      <img src="https://source.unsplash.com/300x200/?bbq,burger" alt="BBQ Inferno Stack" class="rounded-lg mb-4 w-full h-auto"/>
-      <h3 class="text-lg font-semibold">BBQ Inferno Stack 🔥🍖</h3>
-    </div>
+    menuItens.forEach(item => {
+      const div = document.createElement('div');
+      div.className = 'dish';
+      div.innerHTML = `
+        <img src="${item.img}" alt="${item.nome}">
+        <div class="dish-info">
+          <h3>${item.nome}</h3>
+          <p>MZN ${item.preco}</p>
+          <button onclick="adicionar(${item.preco})">Adicionar</button>
+        </div>
+      `;
+      menuContainer.appendChild(div);
+    });
 
-    <div class="bg-pink-100 rounded-2xl sweet-shadow p-4 text-center">
-      <img src="https://source.unsplash.com/300x200/?jalapeno,burger" alt="Double Jalapeño Kick" class="rounded-lg mb-4 w-full h-auto"/>
-      <h3 class="text-lg font-semibold">Double Jalapeño Kick 🥵</h3>
-    </div>
+    function adicionar(preco) {
+      total += preco;
+      totalDisplay.textContent = `MZN ${total}`;
+    }
 
-    <div class="bg-pink-100 rounded-2xl sweet-shadow p-4 text-center">
-      <img src="https://source.unsplash.com/300x200/?korean,spicy,chicken" alt="Korean Hot Chicken" class="rounded-lg mb-4 w-full h-auto"/>
-      <h3 class="text-lg font-semibold">Korean Hot Chicken 🇰🇷🔥</h3>
-    </div>
-
-    <div class="bg-pink-100 rounded-2xl sweet-shadow p-4 text-center">
-      <img src="https://source.unsplash.com/300x200/?garlic,spicy,chicken" alt="Smoky Garlic Heat" class="rounded-lg mb-4 w-full h-auto"/>
-      <h3 class="text-lg font-semibold">Smoky Garlic Heat 🧄🔥</h3>
-    </div>
-
-    <div class="bg-pink-100 rounded-2xl sweet-shadow p-4 text-center">
-      <img src="https://source.unsplash.com/300x200/?ghost,pepper,burger" alt="Ghost Pepper Melt" class="rounded-lg mb-4 w-full h-auto"/>
-      <h3 class="text-lg font-semibold">Ghost Pepper Melt 👻🌶️</h3>
-    </div>
-
-  </div>
-</section>
-<!-- 🍟 Loaded Fries Section -->
-<section id="fries" class="py-16 px-6 md:px-20 bg-pink-100">
-  <h2 class="text-4xl font-extrabold text-center text-pink-600 mb-10">Loaded Fries Selection 🍟💖</h2>
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-    
-    <div class="bg-white rounded-2xl sweet-shadow p-4 text-center">
-      <img src="https://source.unsplash.com/300x200/?cheese,fries" alt="Classic Cheese Fries" class="rounded-lg mb-4 w-full h-auto"/>
-      <h3 class="text-lg font-semibold">Classic Cheese Fries 🧀</h3>
-    </div>
-
-    <div class="bg-white rounded-2xl sweet-shadow p-4 text-center">
-      <img src="https://source.unsplash.com/300x200/?chili,fries" alt="Chili Beef Overload" class="rounded-lg mb-4 w-full h-auto"/>
-      <h3 class="text-lg font-semibold">Chili Beef Overload 🌶️</h3>
-    </div>
-
-    <div class="bg-white rounded-2xl sweet-shadow p-4 text-center">
-      <img src="https://source.unsplash.com/300x200/?jalapeno,fries" alt="Jalapeño Cheese Burst" class="rounded-lg mb-4 w-full h-auto"/>
-      <h3 class="text-lg font-semibold">Jalapeño Cheese Burst 🌶️🧀</h3>
-    </div>
-
-    <div class="bg-white rounded-2xl sweet-shadow p-4 text-center">
-      <img src="https://source.unsplash.com/300x200/?bbq,bacon" alt="BBQ Bacon & Ranch" class="rounded-lg mb-4 w-full h-auto"/>
-      <h3 class="text-lg font-semibold">BBQ Bacon & Ranch 🍖</h3>
-    </div>
-
-    <div class="bg-white rounded-2xl sweet-shadow p-4 text-center">
-      <img src="https://source.unsplash.com/300x200/?garlic,truffle" alt="Garlic Truffle Fries" class="rounded-lg mb-4 w-full h-auto"/>
-      <h3 class="text-lg font-semibold">Garlic Truffle Fries 🧄✨</h3>
-    </div>
-
-    <div class="bg-white rounded-2xl sweet-shadow p-4 text-center">
-      <img src="https://source.unsplash.com/300x200/?mexican,fries" alt="Spicy Mexican Street Fries" class="rounded-lg mb-4 w-full h-auto"/>
-      <h3 class="text-lg font-semibold">Spicy Mexican Street Fries 🌮</h3>
-    </div>
-
-    <div class="bg-white rounded-2xl sweet-shadow p-4 text-center">
-      <img src="https://source.unsplash.com/300x200/?butter,chicken,fries" alt="Butter Chicken Fries" class="rounded-lg mb-4 w-full h-auto"/>
-      <h3 class="text-lg font-semibold">Butter Chicken Fries 🍗🧈</h3>
-    </div>
-
-    <div class="bg-white rounded-2xl sweet-shadow p-4 text-center">
-      <img src="https://source.unsplash.com/300x200/?buffalo,chicken" alt="Buffalo Chicken Crumble" class="rounded-lg mb-4 w-full h-auto"/>
-      <h3 class="text-lg font-semibold">Buffalo Chicken Crumble 🍗🔥</h3>
-    </div>
-
-    <div class="bg-white rounded-2xl sweet-shadow p-4 text-center">
-      <img src="https://source.unsplash.com/300x200/?pulled,pork,fries" alt="Pulled Pork & Slaw" class="rounded-lg mb-4 w-full h-auto"/>
-      <h3 class="text-lg font-semibold">Pulled Pork & Slaw 🍖🥗</h3>
-    </div>
-
-    <div class="bg-white rounded-2xl sweet-shadow p-4 text-center">
-      <img src="https://source.unsplash.com/300x200/?cheese,fries,veggie" alt="Cheesy Veggie Supreme" class="rounded-lg mb-4 w-full h-auto"/>
-      <h3 class="text-lg font-semibold">Cheesy Veggie Supreme 🧀🍅</h3>
-    </div>
-
-    <div class="bg-white rounded-2xl sweet-shadow p-4 text-center">
-      <img src="https://source.unsplash.com/300x200/?curry,fries" alt="Curry Explosion" class="rounded-lg mb-4 w-full h-auto"/>
-      <h3 class="text-lg font-semibold">Curry Explosion 🍛🌶️</h3>
-    </div>
-
-    <div class="bg-white rounded-2xl sweet-shadow p-4 text-center">
-      <img src="https://source.unsplash.com/300x200/?philly,cheesesteak" alt="Philly Cheesesteak Fries" class="rounded-lg mb-4 w-full h-auto"/>
-      <h3 class="text-lg font-semibold">Philly Cheesesteak Fries 🥩🧀</h3>
-    </div>
-
-  </div>
-</section>
-<!-- 🍔 Classic Combo Section -->
-<section id="combo" class="py-16 px-6 md:px-20 bg-pink-100">
-  <h2 class="text-4xl font-extrabold text-center text-pink-600 mb-10">Classic Combo Selection 🍔💖</h2>
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-
-    <div class="bg-white rounded-2xl sweet-shadow p-4 text-center">
-      <img src="https://source.unsplash.com/300x200/?burger,combo" alt="Beef Burger Combo" class="rounded-lg mb-4 w-full h-auto"/>
-      <h3 class="text-lg font-semibold">Beef Burger Combo 🍔</h3>
-    </div>
-
-    <div class="bg-white rounded-2xl sweet-shadow p-4 text-center">
-      <img src="https://source.unsplash.com/300x200/?chicken,burger,combo" alt="Chicken Fillet Combo" class="rounded-lg mb-4 w-full h-auto"/>
-      <h3 class="text-lg font-semibold">Chicken Fillet Combo 🍗</h3>
-    </div>
-
-    <div class="bg-white rounded-2xl sweet-shadow p-4 text-center">
-      <img src="https://source.unsplash.com/300x200/?veggie,burger" alt="Veggie Burger Meal" class="rounded-lg mb-4 w-full h-auto"/>
-      <h3 class="text-lg font-semibold">Veggie Burger Meal 🥗</h3>
-    </div>
-
-    <div class="bg-white rounded-2xl sweet-shadow p-4 text-center">
-      <img src="https://source.unsplash.com/300x200/?fish,chips" alt="Fish & Chips Combo" class="rounded-lg mb-4 w-full h-auto"/>
-      <h3 class="text-lg font-semibold">Fish & Chips Combo 🐟🍟</h3>
-    </div>
-
-    <div class="bg-white rounded-2xl sweet-shadow p-4 text-center">
-      <img src="https://source.unsplash.com/300x200/?double,burger" alt="Double Patty Delight" class="rounded-lg mb-4 w-full h-auto"/>
-      <h3 class="text-lg font-semibold">Double Patty Delight 🍔🍔</h3>
-    </div>
-
-    <div class="bg-white rounded-2xl sweet-shadow p-4 text-center">
-      <img src="https://source.unsplash.com/300x200/?cheese,chicken,combo" alt="Cheesy Chicken Stack" class="rounded-lg mb-4 w-full h-auto"/>
-      <h3 class="text-lg font-semibold">Cheesy Chicken Stack 🧀🍗</h3>
-    </div>
-
-    <div class="bg-white rounded-2xl sweet-shadow p-4 text-center">
-      <img src="https://source.unsplash.com/300x200/?tenders,fries" alt="Crispy Tenders Trio" class="rounded-lg mb-4 w-full h-auto"/>
-      <h3 class="text-lg font-semibold">Crispy Tenders Trio 🍗🍟</h3>
-    </div>
-
-    <div class="bg-white rounded-2xl sweet-shadow p-4 text-center">
-      <img src="https://source.unsplash.com/300x200/?breakfast,box" alt="Classic Breakfast Box" class="rounded-lg mb-4 w-full h-auto"/>
-      <h3 class="text-lg font-semibold">Classic Breakfast Box 🍳🥓</h3>
-    </div>
-
-    <div class="bg-white rounded-2xl sweet-shadow p-4 text-center">
-      <img src="https://source.unsplash.com/300x200/?wings,wedges" alt="Wings & Wedges Deal" class="rounded-lg mb-4 w-full h-auto"/>
-      <h3 class="text-lg font-semibold">Wings & Wedges Deal 🍗🍟</h3>
-    </div>
-
-    <div class="bg-white rounded-2xl sweet-shadow p-4 text-center">
-      <img src="https://source.unsplash.com/300x200/?falafel,wrap" alt="Falafel Wrap Combo" class="rounded-lg mb-4 w-full h-auto"/>
-      <h3 class="text-lg font-semibold">Falafel Wrap Combo 🌯</h3>
-    </div>
-
-    <div class="bg-white rounded-2xl sweet-shadow p-4 text-center">
-      <img src="https://source.unsplash.com/300x200/?pepperoni,pizza" alt="Pepperoni Pizza Slice Box" class="rounded-lg mb-4 w-full h-auto"/>
-      <h3 class="text-lg font-semibold">Pepperoni Pizza Slice Box 🍕</h3>
-    </div>
-
-    <div class="bg-white rounded-2xl sweet-shadow p-4 text-center">
-      <img src="https://source.unsplash.com/300x200/?grilled,chicken,wrap" alt="Grilled Chicken Wrap Set" class="rounded-lg mb-4 w-full h-auto"/>
-      <h3 class="text-lg font-semibold">Grilled Chicken Wrap Set 🌯🍗</h3>
-    </div>
-
-  </div>
-</section>
-
-
-
+    function finalizarCompra(metodo) {
+      alert(`Pagamento de MZN ${total} com ${metodo} confirmado!`);
+      total = 0;
+      totalDisplay.textContent = `MZN 0`;
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init();</script>
+</body>
+</html>
 
 
