@@ -5,6 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lindyla Take Away</title>
   <style>
+    :root {
+      --rosa: #e26d9e;
+      --fundo: #fff6f0;
+      --borda: #fce9e1;
+      --texto: #4b2e2e;
+    }
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: var(--fundo);
+      color: var(--texto);
+    }
     .modal {
       display: none;
       position: fixed;
@@ -21,11 +33,12 @@
       border-radius: 16px;
       width: 90%; max-width: 400px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      border: 3px solid var(--rosa);
     }
     .modal-content h3 {
       margin-bottom: 1rem;
-      font-family: 'Arial', sans-serif;
-      color: #e26d9e;
+      color: var(--rosa);
+      font-size: 1.5rem;
     }
     .modal-content input {
       width: 100%;
@@ -37,19 +50,22 @@
     .btns {
       display: flex;
       justify-content: space-between;
+      gap: 1rem;
     }
     .btns button {
-      padding: 0.5rem 1rem;
+      flex: 1;
+      padding: 0.6rem 1rem;
       border: none;
       border-radius: 8px;
       cursor: pointer;
+      font-weight: bold;
     }
     .btn-cancelar {
       background: #ccc;
       color: #333;
     }
     .btn-confirmar {
-      background: #e26d9e;
+      background: var(--rosa);
       color: white;
     }
   </style>
@@ -62,8 +78,10 @@
       <h3>Pagamento com Cartão</h3>
       <input type="text" placeholder="Número do Cartão">
       <input type="text" placeholder="Nome no Cartão">
-      <input type="text" placeholder="MM/AA">
-      <input type="text" placeholder="CVV">
+      <div style="display: flex; gap: 1rem;">
+        <input type="text" placeholder="MM/AA" style="flex:1">
+        <input type="text" placeholder="CVV" style="flex:1">
+      </div>
       <div class="btns">
         <button class="btn-cancelar" onclick="fecharModal('modalCartao')">Voltar</button>
         <button class="btn-confirmar" onclick="confirmarPagamento('Cartão')">Continuar</button>
@@ -98,7 +116,7 @@
   </div>
 
   <script>
-    let total = 500; // Simulando um total para testes
+    let total = 500; // Simulação de total
     const totalDisplay = { textContent: `MZN ${total}` };
 
     function abrirModal(id) {
@@ -114,7 +132,7 @@
     function abrirModalEmola() { abrirModal('modalEmola'); }
 
     function confirmarPagamento(metodo) {
-      alert(`Pagamento de MZN ${total} com ${metodo} confirmado!`);
+      alert(`Pagamento de MZN ${total} com ${metodo} efetuado com sucesso!`);
       total = 0;
       totalDisplay.textContent = `MZN 0`;
       fecharModal('modal' + metodo.charAt(0).toUpperCase() + metodo.slice(1));
