@@ -4,276 +4,121 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lindyla Take Away</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
   <style>
-    :root {
-      --rosa: #e26d9e;
-      --creme: #fff6f0;
-      --baunilha: #fce9e1;
-      --texto: #4b2e2e;
-      --dourado: #c9a36e;
-      --escuro: #1f1b24;
-      --texto-escuro: #f5f5f5;
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
     }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--creme);
-      color: var(--texto);
-      margin: rink 0e;
-      padding: 0;
-      transition: background 0.4s, color 0.4s;
-    }
-
-    body.dark-mode {
-      background: var(--escuro);
-      color: var(--texto-escuro);
-    }
-
-    header {
-      background: linear-gradient(to right, var(--rosa), var(--dourado));
+    .modal-content {
+      background: white;
       padding: 2rem;
+      border-radius: 16px;
+      width: 90%; max-width: 400px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+    .modal-content h3 {
+      margin-bottom: 1rem;
+      font-family: 'Arial', sans-serif;
+      color: #e26d9e;
+    }
+    .modal-content input {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+    .btns {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      color: white;
-      border-bottom-left-radius: 30px;
-      border-bottom-right-radius: 30px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
     }
-
-    header img {
-      height: 60px;
-    }
-
-    header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      margin: 0;
-    }
-
-    .hero {
-      padding: 4rem 2rem;
-      text-align: center;
-      background: var(--baunilha);
-    }
-
-    .hero button {
-      background: var(--rosa);
-      color: white;
-      padding: 1rem 2rem;
-      border: none;
-      border-radius: 40px;
-      font-size: 1rem;
-      cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: all 0.3s ease;
-    }
-
-    .hero button:hover {
-      background: #d35a8b;
-      transform: translateY(-2px);
-    }
-
-    section {
-      padding: 3rem 2rem;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-      text-align: center;
-    }
-
-    .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-
-    .dish {
-      background: white;
-      border-radius: 20px;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-      overflow: hidden;
-      transition: transform 0.3s ease;
-      text-align: center;
-    }
-
-    .dish:hover {
-      transform: translateY(-5px);
-    }
-
-    .dish img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-
-    .dish-info {
-      padding: 1rem;
-    }
-
-    .dish-info h3 {
-      margin: 0.5rem 0;
-      font-size: 1.2rem;
-    }
-
-    .dish-info p {
-      font-weight: bold;
-      color: var(--rosa);
-    }
-
-    .dish button {
-      margin-top: 0.5rem;
-      background: var(--rosa);
-      color: white;
-      border: none;
-      border-radius: 20px;
+    .btns button {
       padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 8px;
       cursor: pointer;
     }
-
-    footer {
-      text-align: center;
-      background: var(--rosa);
+    .btn-cancelar {
+      background: #ccc;
+      color: #333;
+    }
+    .btn-confirmar {
+      background: #e26d9e;
       color: white;
-      padding: 2rem;
-      border-top-left-radius: 30px;
-      border-top-right-radius: 30px;
-    }
-
-    .payment-section {
-      text-align: center;
-      margin-top: 2rem;
-    }
-
-    .payment-section button {
-      margin: 0.5rem;
-      padding: 0.75rem 1.5rem;
-      border: 2px solid var(--rosa);
-      background: transparent;
-      color: var(--rosa);
-      font-weight: bold;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .payment-section button:hover {
-      background: var(--rosa);
-      color: white;
-    }
-
-    #total {
-      font-size: 1.2rem;
-      font-weight: bold;
-      margin-top: 1rem;
     }
   </style>
 </head>
 <body>
-  <header>
-    <img src="images/logo.png" alt="Logo Lindyla">
-    <h1>Lindyla Take Away</h1>
-  </header>
 
-  <section class="hero">
-    <h2>Bem-vinda!</h2>
-    <p>Descubra um menu feito com delicadeza e sabor</p>
-    <button onclick="document.getElementById('cardapio').scrollIntoView({ behavior: 'smooth' })">Explorar o Cardápio</button>
-  </section>
-
-  <section id="cardapio">
-    <h2>Cardápio</h2>
-    <div class="menu-grid" id="menu"></div>
-    <div class="payment-section">
-      <h3>Total: <span id="total">MZN 0</span></h3>
-      <button onclick="finalizarCompra('Cartão')">Pagar com Cartão</button>
-      <button onclick="finalizarCompra('M-Pesa')">Pagar com M-Pesa</button>
-      <button onclick="finalizarCompra('eMola')">Pagar com eMola</button>
+  <!-- Modal Cartão -->
+  <div class="modal" id="modalCartao">
+    <div class="modal-content">
+      <h3>Pagamento com Cartão</h3>
+      <input type="text" placeholder="Número do Cartão">
+      <input type="text" placeholder="Nome no Cartão">
+      <input type="text" placeholder="MM/AA">
+      <input type="text" placeholder="CVV">
+      <div class="btns">
+        <button class="btn-cancelar" onclick="fecharModal('modalCartao')">Voltar</button>
+        <button class="btn-confirmar" onclick="confirmarPagamento('Cartão')">Continuar</button>
+      </div>
     </div>
-  </section>
+  </div>
 
-  <section>
-    <h2>Sobre Nós</h2>
-    <p style="max-width: 700px; margin: auto; text-align: center;">
-      A Lindyla nasceu do sonho de levar a cozinha doce e acolhedora para mais perto de si. Aqui cada prato é preparado com amor, simplicidade e um toque de carinho, como manda a tradição.
-    </p>
-  </section>
+  <!-- Modal M-Pesa -->
+  <div class="modal" id="modalMpesa">
+    <div class="modal-content">
+      <h3>Pagamento com M-Pesa</h3>
+      <input type="text" placeholder="Número de telefone">
+      <input type="text" placeholder="Código de confirmação">
+      <div class="btns">
+        <button class="btn-cancelar" onclick="fecharModal('modalMpesa')">Voltar</button>
+        <button class="btn-confirmar" onclick="confirmarPagamento('Mpesa')">Confirmar</button>
+      </div>
+    </div>
+  </div>
 
-  <footer>
-    <p>&copy; 2025 Lindyla Take Away • Desenvolvido com 💖</p>
-  </footer>
+  <!-- Modal eMola -->
+  <div class="modal" id="modalEmola">
+    <div class="modal-content">
+      <h3>Pagamento com eMola</h3>
+      <input type="text" placeholder="Número de telefone">
+      <input type="text" placeholder="Código de confirmação">
+      <div class="btns">
+        <button class="btn-cancelar" onclick="fecharModal('modalEmola')">Voltar</button>
+        <button class="btn-confirmar" onclick="confirmarPagamento('Emola')">Confirmar</button>
+      </div>
+    </div>
+  </div>
 
   <script>
-    const menuItens = [
-      // Fast Food
-      { nome: "Hambúrguer Clássico", preco: 450, img: "images/prato1.png" },
-      { nome: "Pizza Pepperoni", preco: 600, img: "images/prato2.png" },
-      { nome: "Wrap de Frango", preco: 400, img: "images/prato3.png" },
-      { nome: "Batata Frita", preco: 250, img: "images/prato4.png" },
-      { nome: "Tosta Mista", preco: 300, img: "images/prato5.png" },
-      { nome: "Kebab de Carne", preco: 550, img: "images/prato6.png" },
-      { nome: "Cachorro Quente", preco: 350, img: "images/prato1.png" },
-      { nome: "Nuggets de Frango", preco: 280, img: "images/prato2.png" },
-      { nome: "Pizza 4 Queijos", preco: 620, img: "images/prato3.png" },
-      { nome: "Frango Frito", preco: 470, img: "images/prato4.png" },
-      { nome: "Sanduíche de Atum", preco: 390, img: "images/prato5.png" },
+    let total = 500; // Simulando um total para testes
+    const totalDisplay = { textContent: `MZN ${total}` };
 
-      // Bebidas
-      { nome: "Sumo de Laranja", preco: 150, img: "images/prato6.png" },
-      { nome: "Coca-Cola", preco: 120, img: "images/prato1.png" },
-      { nome: "Pepsi", preco: 120, img: "images/prato2.png" },
-      { nome: "Fanta", preco: 120, img: "images/prato3.png" },
-      { nome: "Água Mineral", preco: 100, img: "images/prato4.png" },
-      { nome: "Sumo de Manga", preco: 150, img: "images/prato5.png" },
-      { nome: "Chá Gelado", preco: 130, img: "images/prato6.png" },
-      { nome: "Café Gelado", preco: 140, img: "images/prato1.png" },
-      { nome: "Sumo Detox", preco: 180, img: "images/prato2.png" },
-      { nome: "Smoothie de Morango", preco: 200, img: "images/prato3.png" },
-      { nome: "Leite com Chocolate", preco: 160, img: "images/prato4.png" }
-    ];
-
-    let total = 0;
-    const menuContainer = document.getElementById('menu');
-    const totalDisplay = document.getElementById('total');
-
-    menuItens.forEach(item => {
-      const div = document.createElement('div');
-      div.className = 'dish';
-      div.innerHTML = `
-        <img src="${item.img}" alt="${item.nome}">
-        <div class="dish-info">
-          <h3>${item.nome}</h3>
-          <p>MZN ${item.preco}</p>
-          <button onclick="adicionar(${item.preco})">Adicionar</button>
-        </div>
-      `;
-      menuContainer.appendChild(div);
-    });
-
-    function adicionar(preco) {
-      total += preco;
-      totalDisplay.textContent = `MZN ${total}`;
+    function abrirModal(id) {
+      document.getElementById(id).style.display = 'flex';
     }
 
-    function finalizarCompra(metodo) {
+    function fecharModal(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+
+    function abrirModalCartao() { abrirModal('modalCartao'); }
+    function abrirModalMpesa() { abrirModal('modalMpesa'); }
+    function abrirModalEmola() { abrirModal('modalEmola'); }
+
+    function confirmarPagamento(metodo) {
       alert(`Pagamento de MZN ${total} com ${metodo} confirmado!`);
       total = 0;
       totalDisplay.textContent = `MZN 0`;
+      fecharModal('modal' + metodo.charAt(0).toUpperCase() + metodo.slice(1));
     }
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>AOS.init();</script>
 </body>
 </html>
-
-
