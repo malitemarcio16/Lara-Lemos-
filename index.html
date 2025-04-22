@@ -81,56 +81,71 @@
     <button onclick="document.getElementById('fastfood').scrollIntoView({ behavior: 'smooth' })">Ver Cardápio</button>
   </section>
 
-  <!-- Seção combinada -->
   <section id="fastfood">
     <h2 style="text-align: center; font-size: 2rem; margin-bottom: 2rem;">Fast Food</h2>
     <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem;">
-      <!-- Zona combinada: Tostas + Pizzas -->
       <div style="flex: 1 1 38%; background: white; border-radius: 20px; padding: 20px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
         <h3 style="text-align: center; font-size: 24px; margin-bottom: 10px;">🥪 Tipos de Tostas</h3>
-        <ul style="list-style: none; padding: 0; font-size: 18px; color: var(--texto); margin-bottom: 2rem;">
-          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Tosta Mista</li>
-          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Tosta de Frango</li>
-          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Tosta Atum</li>
-          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Tosta Vegetariana</li>
-          <li style="padding: 10px 0;">Tosta de Queijo e Tomate</li>
+        <ul style="list-style: none; padding: 0; font-size: 18px;">
+          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Tosta Mista - 4€ <button onclick="adicionar(4)" style="float:right;background:var(--rosa);color:white;border:none;padding:5px 10px;border-radius:10px;">Adicionar</button></li>
+          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Tosta de Frango - 4.5€ <button onclick="adicionar(4.5)" style="float:right;background:var(--rosa);color:white;border:none;padding:5px 10px;border-radius:10px;">Adicionar</button></li>
+          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Tosta Atum - 4.5€ <button onclick="adicionar(4.5)" style="float:right;background:var(--rosa);color:white;border:none;padding:5px 10px;border-radius:10px;">Adicionar</button></li>
+          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Tosta Vegetariana - 4€ <button onclick="adicionar(4)" style="float:right;background:var(--rosa);color:white;border:none;padding:5px 10px;border-radius:10px;">Adicionar</button></li>
+          <li style="padding: 10px 0;">Tosta de Queijo e Tomate - 4€ <button onclick="adicionar(4)" style="float:right;background:var(--rosa);color:white;border:none;padding:5px 10px;border-radius:10px;">Adicionar</button></li>
         </ul>
         <h3 style="text-align: center; font-size: 24px; margin-bottom: 10px;">🍕 Tipos de Pizza</h3>
-        <ul style="list-style: none; padding: 0; font-size: 18px; color: var(--texto);">
-          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Margherita</li>
-          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Pepperoni</li>
-          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Calabresa</li>
-          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Quatro Queijos</li>
-          <li style="padding: 10px 0;">Frango com Catupiry</li>
+        <ul style="list-style: none; padding: 0; font-size: 18px;">
+          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Margherita - 6€ <button onclick="adicionar(6)" style="float:right;background:var(--rosa);color:white;border:none;padding:5px 10px;border-radius:10px;">Adicionar</button></li>
+          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Pepperoni - 6.5€ <button onclick="adicionar(6.5)" style="float:right;background:var(--rosa);color:white;border:none;padding:5px 10px;border-radius:10px;">Adicionar</button></li>
+          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Calabresa - 6.5€ <button onclick="adicionar(6.5)" style="float:right;background:var(--rosa);color:white;border:none;padding:5px 10px;border-radius:10px;">Adicionar</button></li>
+          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Quatro Queijos - 7€ <button onclick="adicionar(7)" style="float:right;background:var(--rosa);color:white;border:none;padding:5px 10px;border-radius:10px;">Adicionar</button></li>
+          <li style="padding: 10px 0;">Frango com Catupiry - 7€ <button onclick="adicionar(7)" style="float:right;background:var(--rosa);color:white;border:none;padding:5px 10px;border-radius:10px;">Adicionar</button></li>
         </ul>
       </div>
 
-      <!-- Frango e Burritos lado a lado -->
       <div style="display: flex; flex: 1 1 58%; gap: 2rem; flex-wrap: wrap;">
-        <!-- Pratos de Frango -->
         <div style="flex: 1 1 48%; background: white; border-radius: 20px; padding: 20px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
           <h3 style="text-align: center; font-size: 24px; margin-bottom: 20px;">🍗 Pratos de Frango</h3>
-          <ul style="list-style: none; padding: 0; font-size: 18px; color: var(--texto);">
-            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Frango Grelhado</li>
-            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Frango à Passarinho</li>
-            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Frango Frito</li>
-            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Frango ao Caril</li>
-            <li style="padding: 10px 0;">Frango Crocante</li>
+          <ul style="list-style: none; padding: 0; font-size: 18px;">
+            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Frango Grelhado - 5€ <button onclick="adicionar(5)" style="float:right;background:var(--rosa);color:white;border:none;padding:5px 10px;border-radius:10px;">Adicionar</button></li>
+            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Frango à Passarinho - 5€ <button onclick="adicionar(5)" style="float:right;background:var(--rosa);color:white;border:none;padding:5px 10px;border-radius:10px;">Adicionar</button></li>
+            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Frango Frito - 5.5€ <button onclick="adicionar(5.5)" style="float:right;background:var(--rosa);color:white;border:none;padding:5px 10px;border-radius:10px;">Adicionar</button></li>
+            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Frango ao Caril - 6€ <button onclick="adicionar(6)" style="float:right;background:var(--rosa);color:white;border:none;padding:5px 10px;border-radius:10px;">Adicionar</button></li>
+            <li style="padding: 10px 0;">Frango Crocante - 6€ <button onclick="adicionar(6)" style="float:right;background:var(--rosa);color:white;border:none;padding:5px 10px;border-radius:10px;">Adicionar</button></li>
           </ul>
         </div>
 
-        <!-- Tipos de Burritos -->
         <div style="flex: 1 1 48%; background: white; border-radius: 20px; padding: 20px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
           <h3 style="text-align: center; font-size: 24px; margin-bottom: 20px;">🌯 Tipos de Burrito</h3>
-          <ul style="list-style: none; padding: 0; font-size: 18px; color: var(--texto);">
-            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Burrito Clássico</li>
-            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Burrito de Frango</li>
-            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Burrito Picante</li>
-            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Burrito Vegano</li>
-            <li style="padding: 10px 0;">Burrito com Queijo</li>
+          <ul style="list-style: none; padding: 0; font-size: 18px;">
+            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Burrito Clássico - 6€ <button onclick="adicionar(6)" style="float:right;background:var(--rosa);color:white;border:none;padding:5px 10px;border-radius:10px;">Adicionar</button></li>
+            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Burrito de Frango - 6.5€ <button onclick="adicionar(6.5)" style="float:right;background:var(--rosa);color:white;border:none;padding:5px 10px;border-radius:10px;">Adicionar</button></li>
+            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Burrito Picante - 6.5€ <button onclick="adicionar(6.5)" style="float:right;background:var(--rosa);color:white;border:none;padding:5px 10px;border-radius:10px;">Adicionar</button></li>
+            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Burrito Vegano - 6€ <button onclick="adicionar(6)" style="float:right;background:var(--rosa);color:white;border:none;padding:5px 10px;border-radius:10px;">Adicionar</button></li>
+            <li style="padding: 10px 0;">Burrito com Queijo - 6€ <button onclick="adicionar(6)" style="float:right;background:var(--rosa);color:white;border:none;padding:5px 10px;border-radius:10px;">Adicionar</button></li>
           </ul>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section id="resumo-pedido" style="padding: 2rem; background: #fff0f5; border-top: 2px solid var(--rosa);">
+    <h2 style="text-align: center;">Resumo do Pedido</h2>
+    <p style="font-size: 1.2rem; text-align: center;">Total: <span id="total">0.00</span> €</p>
+
+    <div style="text-align: center; margin: 1rem 0;">
+      <label for="pagamento" style="font-size: 1.1rem;">Escolha o método de pagamento:</label><br><br>
+      <select id="pagamento" style="padding: 0.5rem 1rem; border-radius: 10px;">
+        <option value="cartao">Cartão</option>
+        <option value="mpesa">M-Pesa</option>
+        <option value="emola">e-Mola</option>
+      </select>
+    </div>
+
+    <div style="text-align: center; margin-top: 1.5rem;">
+      <button style="background: var(--rosa); color: white; padding: 1rem 2rem; border: none; border-radius: 30px; font-size: 1rem; cursor: pointer;">
+        Finalizar Pedido
+      </button>
     </div>
   </section>
 
@@ -141,6 +156,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
     AOS.init();
+    let total = 0;
+    function adicionar(valor) {
+      total += valor;
+      document.getElementById('total').innerText = total.toFixed(2);
+    }
   </script>
 </body>
 </html>
