@@ -132,57 +132,6 @@
       color: white;
       margin-top: 4rem;
     }
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.5);
-      justify-content: center;
-      align-items: center;
-      z-index: 999;
-    }
-    .modal-content {
-      background: white;
-      padding: 2rem;
-      border-radius: 16px;
-      width: 90%; max-width: 400px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-      border: 3px solid var(--rosa);
-    }
-    .modal-content h3 {
-      margin-bottom: 1rem;
-      color: var(--rosa);
-      font-size: 1.5rem;
-    }
-    .modal-content input {
-      width: 100%;
-      padding: 0.75rem;
-      margin-bottom: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-    }
-    .btns {
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-    .btns button {
-      flex: 1;
-      padding: 0.6rem 1rem;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    .btn-cancelar {
-      background: #ccc;
-      color: #333;
-    }
-    .btn-confirmar {
-      background: var(--rosa);
-      color: white;
-    }
   </style>
 </head>
 <body>
@@ -197,126 +146,69 @@
     <button onclick="document.getElementById('fastfood').scrollIntoView({ behavior: 'smooth' })">Ver Cardápio</button>
   </section>
 
+  <!-- Seção combinada com tostas, pizzas, hambúrgueres, frango e burritos -->
   <section id="fastfood">
-    <h2>Fast Food</h2>
-    <div class="menu-grid" id="menuFastFood"></div>
-  </section>
-
-  <section id="drinks">
-    <h2>Bebidas & Sumos</h2>
-    <div class="menu-grid" id="menuDrinks"></div>
-  </section>
-
-  <section class="payment-section">
-    <h3>Total: <span id="total">MZN 0</span></h3>
-    <button onclick="abrirModal('modalCartao')">Pagar com Cartão</button>
-    <button onclick="abrirModal('modalMpesa')">Pagar com M-Pesa</button>
-    <button onclick="abrirModal('modalEmola')">Pagar com eMola</button>
+    <h2 style="text-align: center; font-size: 2rem; margin-bottom: 2rem;">Fast Food</h2>
+    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem;">
+      <div style="flex: 1 1 18%; background: white; border-radius: 20px; padding: 20px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+        <h3 style="text-align: center; font-size: 24px; margin-bottom: 20px;">🥪 Tipos de Tostas</h3>
+        <ul style="list-style: none; padding: 0; font-size: 18px; color: var(--texto);">
+          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Tosta Mista</li>
+          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Tosta de Frango</li>
+          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Tosta Atum</li>
+          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Tosta Vegetariana</li>
+          <li style="padding: 10px 0;">Tosta de Queijo e Tomate</li>
+        </ul>
+      </div>
+      <div style="flex: 1 1 18%; background: white; border-radius: 20px; padding: 20px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+        <h3 style="text-align: center; font-size: 24px; margin-bottom: 20px;">🍕 Tipos de Pizza</h3>
+        <ul style="list-style: none; padding: 0; font-size: 18px; color: var(--texto);">
+          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Margherita</li>
+          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Pepperoni</li>
+          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Calabresa</li>
+          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Quatro Queijos</li>
+          <li style="padding: 10px 0;">Frango com Catupiry</li>
+        </ul>
+      </div>
+      <div style="flex: 1 1 18%; background: white; border-radius: 20px; padding: 20px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+        <h3 style="text-align: center; font-size: 24px; margin-bottom: 20px;">🍔 Tipos de Hambúrguer</h3>
+        <ul style="list-style: none; padding: 0; font-size: 18px; color: var(--texto);">
+          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Cheeseburger</li>
+          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">X-Bacon</li>
+          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Hambúrguer Vegano</li>
+          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Duplo Smash</li>
+          <li style="padding: 10px 0;">Chicken Burger</li>
+        </ul>
+      </div>
+      <div style="flex: 1 1 18%; background: white; border-radius: 20px; padding: 20px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+        <h3 style="text-align: center; font-size: 24px; margin-bottom: 20px;">🍗 Pratos de Frango</h3>
+        <ul style="list-style: none; padding: 0; font-size: 18px; color: var(--texto);">
+          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Frango Grelhado</li>
+          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Frango à Passarinho</li>
+          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Frango Frito</li>
+          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Frango ao Caril</li>
+          <li style="padding: 10px 0;">Frango Crocante</li>
+        </ul>
+      </div>
+      <div style="flex: 1 1 18%; background: white; border-radius: 20px; padding: 20px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+        <h3 style="text-align: center; font-size: 24px; margin-bottom: 20px;">🌯 Tipos de Burrito</h3>
+        <ul style="list-style: none; padding: 0; font-size: 18px; color: var(--texto);">
+          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Burrito Clássico</li>
+          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Burrito de Frango</li>
+          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Burrito Picante</li>
+          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Burrito Vegano</li>
+          <li style="padding: 10px 0;">Burrito com Queijo</li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <footer>
     <p>&copy; 2025 Lindyla Take Away. Todos os direitos reservados.</p>
   </footer>
-
-  <!-- Modais de Pagamento (iguais ao anterior) -->
-  <div class="modal" id="modalCartao">
-    <div class="modal-content">
-      <h3>Pagamento com Cartão</h3>
-      <input type="text" placeholder="Número do Cartão">
-      <input type="text" placeholder="Nome no Cartão">
-      <div style="display: flex; gap: 1rem;">
-        <input type="text" placeholder="MM/AA" style="flex:1">
-        <input type="text" placeholder="CVV" style="flex:1">
-      </div>
-      <div class="btns">
-        <button class="btn-cancelar" onclick="fecharModal('modalCartao')">Voltar</button>
-        <button class="btn-confirmar" onclick="confirmarPagamento('Cartão')">Continuar</button>
-      </div>
-    </div>
-  </div>
-  <div class="modal" id="modalMpesa">
-    <div class="modal-content">
-      <h3>Pagamento com M-Pesa</h3>
-      <input type="text" placeholder="Número de telefone">
-      <input type="text" placeholder="Código de confirmação">
-      <div class="btns">
-        <button class="btn-cancelar" onclick="fecharModal('modalMpesa')">Voltar</button>
-        <button class="btn-confirmar" onclick="confirmarPagamento('Mpesa')">Confirmar</button>
-      </div>
-    </div>
-  </div>
-  <div class="modal" id="modalEmola">
-    <div class="modal-content">
-      <h3>Pagamento com eMola</h3>
-      <input type="text" placeholder="Número de telefone">
-      <input type="text" placeholder="Código de confirmação">
-      <div class="btns">
-        <button class="btn-cancelar" onclick="fecharModal('modalEmola')">Voltar</button>
-        <button class="btn-confirmar" onclick="confirmarPagamento('Emola')">Confirmar</button>
-      </div>
-    </div>
-  </div>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
     AOS.init();
-
-    const menuFastFood = [
-      "Hambúrguer", "Pizza Pepperoni", "Tosta Mista", "Frango Frito", "Batata Frita",
-      "Kebab", "Wrap de Frango", "Cachorro Quente", "Nuggets", "Lasanha", "Burrito"
-    ];
-
-    const menuDrinks = [
-      "Sumo de Laranja", "Coca-Cola", "Fanta", "Pepsi", "Água", "Sumo Detox",
-      "Smoothie", "Ice Tea", "Leite com Chocolate", "Café Gelado", "Sumo de Manga"
-    ];
-
-    let total = 0;
-
-    const containerFF = document.getElementById("menuFastFood");
-    const containerDrinks = document.getElementById("menuDrinks");
-    const totalDisplay = document.getElementById("total");
-
-    menuFastFood.forEach((nome, i) => {
-      const preco = 300 + i * 10;
-      const el = document.createElement("div");
-      el.className = "dish";
-      el.innerHTML = `
-        <img src="images/prato${(i%6)+1}.png" alt="${nome}">
-        <h3>${nome}</h3>
-        <p>MZN ${preco}</p>
-        <button onclick="adicionar(${preco})">Adicionar</button>`;
-      containerFF.appendChild(el);
-    });
-
-    menuDrinks.forEach((nome, i) => {
-      const preco = 100 + i * 10;
-      const el = document.createElement("div");
-      el.className = "dish";
-      el.innerHTML = `
-        <img src="images/prato${(i%6)+1}.png" alt="${nome}">
-        <h3>${nome}</h3>
-        <p>MZN ${preco}</p>
-        <button onclick="adicionar(${preco})">Adicionar</button>`;
-      containerDrinks.appendChild(el);
-    });
-
-    function adicionar(preco) {
-      total += preco;
-      totalDisplay.textContent = `MZN ${total}`;
-    }
-    function abrirModal(id) {
-      document.getElementById(id).style.display = 'flex';
-    }
-    function fecharModal(id) {
-      document.getElementById(id).style.display = 'none';
-    }
-    function confirmarPagamento(metodo) {
-      alert(`Pagamento de MZN ${total} com ${metodo} efetuado com sucesso!`);
-      total = 0;
-      totalDisplay.textContent = `MZN 0`;
-      fecharModal('modal' + metodo.charAt(0).toUpperCase() + metodo.slice(1));
-    }
   </script>
 </body>
 </html>
