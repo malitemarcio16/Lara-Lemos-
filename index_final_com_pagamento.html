@@ -1,279 +1,214 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lindyla Take Away</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
   <style>
-    :root {
-      --rosa: #e26d9e;
-      --fundo: #fff6f0;
-      --borda: #fce9e1;
-      --texto: #4b2e2e;
-    }
     body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background-color: #fff0f5;
+      color: #5c3a3a;
       margin: 0;
-      font-family: 'Arial', sans-serif;
-      background: var(--fundo);
-      color: var(--texto);
-      overflow-x: hidden;
+      padding: 0;
     }
+
     header {
-      background: linear-gradient(to right, var(--rosa), #f9c4d2);
-      padding: 2rem;
+      background-color: #f78fb3;
+      color: white;
+      padding: 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
+
     header img {
-      height: 60px;
-      border-radius: 50%;
+      height: 80px;
+      width: auto;
+      margin-right: 20px;
     }
-    header h1 {
-      font-size: 2rem;
-    }
-    .hero {
-      padding: 5rem 2rem;
+
+    .header-text {
+      flex-grow: 1;
       text-align: center;
-      background: linear-gradient(to bottom, var(--borda), var(--fundo));
     }
-    .hero button {
-      background: var(--rosa);
-      color: white;
-      padding: 1rem 2rem;
-      border: none;
-      border-radius: 30px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    .hero button:hover {
-      transform: scale(1.05);
-    }
+
     section {
-      padding: 2rem;
-      max-width: 1200px;
-      margin: auto;
+      margin: 20px;
+      padding: 20px;
+      background-color: #fffaf0;
+      border-radius: 12px;
     }
+
     h2 {
+      color: #f78fb3;
       text-align: center;
-      margin-bottom: 2rem;
     }
-    footer {
+
+    .cardapio {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    .item {
+      background-color: #ffe4e1;
+      border: 2px solid #ffc0cb;
+      border-radius: 12px;
+      margin: 10px;
+      width: 250px;
       text-align: center;
-      padding: 2rem;
-      background: var(--rosa);
+      padding: 10px;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .item img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    button {
+      background-color: #f78fb3;
       color: white;
-      margin-top: 4rem;
+      border: none;
+      padding: 10px;
+      width: 100%;
+      cursor: pointer;
+      border-radius: 8px;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #ff5e9c;
+    }
+
+    .whatsapp-btn {
+      background-color: #25d366;
+      color: white;
+      font-size: 16px;
+      padding: 15px;
+      text-align: center;
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 20px 0;
+    }
+
+    .whatsapp-btn:hover {
+      background-color: #128c7e;
+    }
+
+    .categories {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px;
+    }
+
+    .category {
+      padding: 10px;
+      background-color: #f78fb3;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .category:hover {
+      background-color: #ff5e9c;
     }
   </style>
 </head>
 <body>
-  <header data-aos="fade-down">
-    <img src="images/logo.png" alt="Logo Lindyla">
-    <h1>Lindyla Take Away</h1>
+  <header>
+    <img src="images/logo.png" alt="Lindyla Logo">
+    <div class="header-text">
+      <h1>Lindyla Take Away</h1>
+      <p>Comida deliciosa, feita com amor!</p>
+    </div>
   </header>
 
-  <section class="hero" data-aos="zoom-in">
-    <h2>Bem-vinda!</h2>
-    <p>Explore nossos pratos com um toque doce e caseiro</p>
-    <button onclick="document.getElementById('fastfood').scrollIntoView({ behavior: 'smooth' })">Ver Cardápio</button>
-  </section>
-
-  <!-- Seção combinada -->
-  <section id="fastfood">
-    <h2 style="text-align: center; font-size: 2rem; margin-bottom: 2rem;">Fast Food</h2>
-    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem;">
-      <!-- Zona combinada: Tostas + Pizzas -->
-      <div style="flex: 1 1 38%; background: white; border-radius: 20px; padding: 20px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
-        <h3 style="text-align: center; font-size: 24px; margin-bottom: 10px;">🥪 Tipos de Tostas</h3>
-        <ul style="list-style: none; padding: 0; font-size: 18px; color: var(--texto); margin-bottom: 2rem;">
-          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Tosta Mista - 4€ <button onclick="adicionar(4)" style="float:right;background:var(--rosa);color:white;border:none;padding:5px 10px;border-radius:10px;">Adicionar</button>
-          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Tosta de Frango - 4.5€ <button onclick="adicionar(4.5)" style="float:right;background:var(--rosa);color:white;border:none;padding:5px 10px;border-radius:10px;">Adicionar</button>
-          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Tosta Atum - 4.5€ <button onclick="adicionar(4.5)" style="float:right;background:var(--rosa);color:white;border:none;padding:5px 10px;border-radius:10px;">Adicionar</button>
-          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Tosta Vegetariana - 4€ <button onclick="adicionar(4)" style="float:right;background:var(--rosa);color:white;border:none;padding:5px 10px;border-radius:10px;">Adicionar</button>
-          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Tosta de Queijo e Tomate - 4€ <button onclick="adicionar(4)" style="float:right;background:var(--rosa);color:white;border:none;padding:5px 10px;border-radius:10px;">Adicionar</button>
-        </ul>
-        <h3 style="text-align: center; font-size: 24px; margin-bottom: 10px;">🍕 Tipos de Pizza</h3>
-        <ul style="list-style: none; padding: 0; font-size: 18px; color: var(--texto);">
-          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Margherita - 6€ <button onclick="adicionar(6)" style="float:right;background:var(--rosa);color:white;border:none;padding:5px 10px;border-radius:10px;">Adicionar</button>
-          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Pepperoni - 6.5€ <button onclick="adicionar(6.5)" style="float:right;background:var(--rosa);color:white;border:none;padding:5px 10px;border-radius:10px;">Adicionar</button>
-          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Calabresa - 6.5€ <button onclick="adicionar(6.5)" style="float:right;background:var(--rosa);color:white;border:none;padding:5px 10px;border-radius:10px;">Adicionar</button>
-          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Quatro Queijos - 7€ <button onclick="adicionar(7)" style="float:right;background:var(--rosa);color:white;border:none;padding:5px 10px;border-radius:10px;">Adicionar</button>
-          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Frango com Catupiry - 7€ <button onclick="adicionar(7)" style="float:right;background:var(--rosa);color:white;border:none;padding:5px 10px;border-radius:10px;">Adicionar</button>
-        </ul>
-      </div>
-
-      <!-- Frango e Burritos lado a lado -->
-      <div style="display: flex; flex: 1 1 58%; gap: 2rem; flex-wrap: wrap;">
-        <!-- Pratos de Frango -->
-        <div style="flex: 1 1 48%; background: white; border-radius: 20px; padding: 20px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
-          <h3 style="text-align: center; font-size: 24px; margin-bottom: 20px;">🍗 Pratos de Frango</h3>
-          <ul style="list-style: none; padding: 0; font-size: 18px; color: var(--texto);">
-            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Frango Grelhado - 5€ <button onclick="adicionar(5)" style="float:right;background:var(--rosa);color:white;border:none;padding:5px 10px;border-radius:10px;">Adicionar</button>
-            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Frango à Passarinho - 5€ <button onclick="adicionar(5)" style="float:right;background:var(--rosa);color:white;border:none;padding:5px 10px;border-radius:10px;">Adicionar</button>
-            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Frango Frito - 5.5€ <button onclick="adicionar(5.5)" style="float:right;background:var(--rosa);color:white;border:none;padding:5px 10px;border-radius:10px;">Adicionar</button>
-            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Frango ao Caril - 6€ <button onclick="adicionar(6)" style="float:right;background:var(--rosa);color:white;border:none;padding:5px 10px;border-radius:10px;">Adicionar</button>
-            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Frango Crocante - 6€ <button onclick="adicionar(6)" style="float:right;background:var(--rosa);color:white;border:none;padding:5px 10px;border-radius:10px;">Adicionar</button>
-          </ul>
-        </div>
-
-        <!-- Tipos de Burritos -->
-        <div style="flex: 1 1 48%; background: white; border-radius: 20px; padding: 20px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
-          <h3 style="text-align: center; font-size: 24px; margin-bottom: 20px;">🌯 Tipos de Burrito</h3>
-          <ul style="list-style: none; padding: 0; font-size: 18px; color: var(--texto);">
-            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Burrito Clássico - 6€ <button onclick="adicionar(6)" style="float:right;background:var(--rosa);color:white;border:none;padding:5px 10px;border-radius:10px;">Adicionar</button>
-            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Burrito de Frango - 6.5€ <button onclick="adicionar(6.5)" style="float:right;background:var(--rosa);color:white;border:none;padding:5px 10px;border-radius:10px;">Adicionar</button>
-            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Burrito Picante - 6.5€ <button onclick="adicionar(6.5)" style="float:right;background:var(--rosa);color:white;border:none;padding:5px 10px;border-radius:10px;">Adicionar</button>
-            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Burrito Vegano - 6€ <button onclick="adicionar(6)" style="float:right;background:var(--rosa);color:white;border:none;padding:5px 10px;border-radius:10px;">Adicionar</button>
-            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Burrito com Queijo - 6€ <button onclick="adicionar(6)" style="float:right;background:var(--rosa);color:white;border:none;padding:5px 10px;border-radius:10px;">Adicionar</button>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Lindyla Take Away. Todos os direitos reservados.</p>
-  </footer>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
-
-<section id="resumo-pedido" style="padding: 2rem; background: #fff0f5; border-top: 2px solid var(--rosa);">
-  <h2 style="text-align: center;">Resumo do Pedido</h2>
-  <p style="font-size: 1.2rem; text-align: center;">Total: <span id="total">0.00</span> €</p>
-
-  <div style="text-align: center; margin: 1rem 0;">
-    <label for="pagamento" style="font-size: 1.1rem;">Escolha o método de pagamento:</label><br><br>
-    
-    <div style="text-align: center; margin-top: 2rem;">
-      <button onclick="abrirCartao()" style="background: var(--rosa); color: white; margin: 0.5rem; padding: 1rem 2rem; border: none; border-radius: 30px; font-size: 1rem;">Pagar com Cartão</button>
-      <button onclick="abrirMpesa()" style="background: green; color: white; margin: 0.5rem; padding: 1rem 2rem; border: none; border-radius: 30px; font-size: 1rem;">Pagar com M-Pesa</button>
-      <button onclick="abrirEmola()" style="background: orange; color: white; margin: 0.5rem; padding: 1rem 2rem; border: none; border-radius: 30px; font-size: 1rem;">Pagar com e-Mola</button>
-    </div>
-
-    <!-- Modal Cartão -->
-    <div id="modalCartao" style="display:none; position:fixed; top:20%; left:50%; transform:translateX(-50%); background:white; padding:2rem; border-radius:20px; box-shadow:0 0 10px rgba(0,0,0,0.2); z-index:999;">
-      <h3>Pagamento com Cartão</h3>
-      <input type="text" placeholder="Número do Cartão" style="padding:0.5rem; width:100%; margin-bottom:1rem;" />
-      <input type="text" placeholder="Data de Validade" style="padding:0.5rem; width:100%; margin-bottom:1rem;" />
-      <input type="text" placeholder="CVV" style="padding:0.5rem; width:100%; margin-bottom:1rem;" />
-      <button onclick="fecharModais()" style="margin-top:1rem; background: var(--rosa); color:white; padding:0.5rem 1rem; border:none; border-radius:10px;">Confirmar Pagamento</button>
-    </div>
-
-    <!-- Modal Mpesa -->
-    <div id="modalMpesa" style="display:none; position:fixed; top:20%; left:50%; transform:translateX(-50%); background:white; padding:2rem; border-radius:20px; box-shadow:0 0 10px rgba(0,0,0,0.2); z-index:999;">
-      <h3>Pagamento com M-Pesa</h3>
-      <input type="text" placeholder="Número de Telefone" style="padding:0.5rem; width:100%; margin-bottom:1rem;" />
-      <input type="text" placeholder="Código de Confirmação" style="padding:0.5rem; width:100%; margin-bottom:1rem;" />
-      <button onclick="fecharModais()" style="margin-top:1rem; background: green; color:white; padding:0.5rem 1rem; border:none; border-radius:10px;">Confirmar Pagamento</button>
-    </div>
-
-    <!-- Modal Emola -->
-    <div id="modalEmola" style="display:none; position:fixed; top:20%; left:50%; transform:translateX(-50%); background:white; padding:2rem; border-radius:20px; box-shadow:0 0 10px rgba(0,0,0,0.2); z-index:999;">
-      <h3>Pagamento com e-Mola</h3>
-      <input type="text" placeholder="Número de Telefone" style="padding:0.5rem; width:100%; margin-bottom:1rem;" />
-      <input type="text" placeholder="Código de Confirmação" style="padding:0.5rem; width:100%; margin-bottom:1rem;" />
-      <button onclick="fecharModais()" style="margin-top:1rem; background: orange; color:white; padding:0.5rem 1rem; border:none; border-radius:10px;">Confirmar Pagamento</button>
-    </div>
-    <script>
-      function abrirCartao() {
-        fecharModais();
-        document.getElementById('modalCartao').style.display = 'block';
-      }
-      function abrirMpesa() {
-        fecharModais();
-        document.getElementById('modalMpesa').style.display = 'block';
-      }
-      function abrirEmola() {
-        fecharModais();
-        document.getElementById('modalEmola').style.display = 'block';
-      }
-      function fecharModais() {
-        document.getElementById('modalCartao').style.display = 'none';
-        document.getElementById('modalMpesa').style.display = 'none';
-        document.getElementById('modalEmola').style.display = 'none';
-      }
-    </script>
-    <div style="display:none"
- style="padding: 0.5rem 1rem; border-radius: 10px;">
-      <option value="cartao">Cartão</option>
-      <option value="mpesa">M-Pesa</option>
-      <option value="emola">e-Mola</option>
-    </select>
+  <div class="categories">
+    <div class="category" onclick="scrollToSection('spicy')">Spicy Chicken</div>
+    <div class="category" onclick="scrollToSection('bebidas')">Bebidas</div>
+    <div class="category" onclick="scrollToSection('sobremesas')">Sobremesas</div>
   </div>
 
-  
-<div style="text-align: center; margin-top: 1.5rem;">
-  <button onclick="escolherMetodoPagamento()" style="background: var(--rosa); color: white; padding: 1rem 2rem; border: none; border-radius: 30px; font-size: 1rem; cursor: pointer;">
-    Finalizar Pedido
-  </button>
-</div>
+  <section id="spicy">
+    <h2>Spicy Chicken Selection</h2>
+    <div class="cardapio">
+      <div class="item">
+        <img src="images/spicy1.jpg" alt="Spicy Chicken Burger" />
+        <h3>Spicy Chicken 1</h3>
+        <p>Hambúrguer crocante de frango empanado, regado com molho picante especial da casa, servido com alface fresquinha e pão brioche tostado.</p>
+        <button onclick="adicionar(250)">Adicionar - 250MT</button>
+      </div>
+      <div class="item">
+        <img src="images/spicy2.jpg" alt="Spicy Chicken 2" />
+        <h3>Spicy Chicken 2</h3>
+        <p>Frango picante com queijo cheddar derretido, cebola caramelizada e molho barbecue picante, em pão fofo de batata.</p>
+        <button onclick="adicionar(280)">Adicionar - 280MT</button>
+      </div>
+      <div class="item">
+        <img src="images/spicy3.jpg" alt="Spicy Chicken 3" />
+        <h3>Spicy Chicken 3</h3>
+        <p>Filé de frango empanado e super crocante com maionese temperada, jalapeños e salada crocante no pão artesanal.</p>
+        <button onclick="adicionar(300)">Adicionar - 300MT</button>
+      </div>
+    </div>
+  </section>
 
-<!-- Modal para escolher método de pagamento -->
-<div id="modalEscolha" style="display:none; position:fixed; top:20%; left:50%; transform:translateX(-50%); background:white; padding:2rem; border-radius:20px; box-shadow:0 0 10px rgba(0,0,0,0.2); z-index:999;">
-  <h3>Escolha o método de pagamento</h3>
-  <button onclick="abrirCartao()" style="margin:0.5rem;background: var(--rosa);color:white;padding:0.5rem 1rem;border:none;border-radius:10px;">Cartão</button>
-  <button onclick="abrirMpesa()" style="margin:0.5rem;background: green;color:white;padding:0.5rem 1rem;border:none;border-radius:10px;">M-Pesa</button>
-  <button onclick="abrirEmola()" style="margin:0.5rem;background: orange;color:white;padding:0.5rem 1rem;border:none;border-radius:10px;">e-Mola</button>
-</div>
+  <section id="bebidas">
+    <h2>Bebidas</h2>
+    <div class="cardapio">
+      <div class="item">
+        <img src="images/refrigerante.jpg" alt="Refrigerante" />
+        <h3>Refrigerante</h3>
+        <p>Refrigerante gelado, perfeito para acompanhar sua refeição.</p>
+        <button onclick="adicionar(150)">Adicionar - 150MT</button>
+      </div>
+      <div class="item">
+        <img src="images/suco.jpg" alt="Suco Natural" />
+        <h3>Suco Natural</h3>
+        <p>Suco natural de laranja, fresco e saboroso.</p>
+        <button onclick="adicionar(180)">Adicionar - 180MT</button>
+      </div>
+    </div>
+  </section>
 
-<!-- Alerta de sucesso -->
-<div id="popupSucesso" style="display:none; position:fixed; top:30%; left:50%; transform:translateX(-50%); background:#d4edda; padding:1.5rem; border:2px solid #28a745; border-radius:10px; z-index:1000;">
-  <strong>✅ Pagamento efectuado com sucesso!</strong>
-</div>
+  <section id="sobremesas">
+    <h2>Sobremesas</h2>
+    <div class="cardapio">
+      <div class="item">
+        <img src="images/sobremesa1.jpg" alt="Bolo de Chocolate" />
+        <h3>Bolo de Chocolate</h3>
+        <p>Delicioso bolo de chocolate, com cobertura cremosa e aveludada.</p>
+        <button onclick="adicionar(200)">Adicionar - 200MT</button>
+      </div>
+      <div class="item">
+        <img src="images/sobremesa2.jpg" alt="Torta de Limão" />
+        <h3>Torta de Limão</h3>
+        <p>Torta de limão com uma camada crocante e recheio cremoso.</p>
+        <button onclick="adicionar(220)">Adicionar - 220MT</button>
+      </div>
+    </div>
+  </section>
 
-<script>
-  function escolherMetodoPagamento() {
-    fecharModais();
-    document.getElementById('modalEscolha').style.display = 'block';
-  }
+  <div>
+    <a href="https://wa.me/258879416757">
+      <button class="whatsapp-btn">Fale Conosco no WhatsApp</button>
+    </a>
+  </div>
 
-  function confirmarPagamento() {
-    fecharModais();
-    document.getElementById('popupSucesso').style.display = 'block';
-    setTimeout(() => {
-      document.getElementById('popupSucesso').style.display = 'none';
-    }, 3000);
-  }
+  <script>
+    function adicionar(preco) {
+      alert('Item adicionado ao carrinho! Preço: ' + preco + 'MT');
+    }
 
-  function voltar() {
-    fecharModais();
-    document.getElementById('modalEscolha').style.display = 'block';
-  }
-
-  function abrirCartao() {
-    fecharModais();
-    document.getElementById('modalCartao').innerHTML += '<button onclick="confirmarPagamento()" style="margin-top:1rem;background: var(--rosa); color:white; padding:0.5rem 1rem; border:none; border-radius:10px;">Confirmar</button> <button onclick="voltar()" style="margin-top:1rem; margin-left:1rem; background: gray; color:white; padding:0.5rem 1rem; border:none; border-radius:10px;">Voltar</button>';
-    document.getElementById('modalCartao').style.display = 'block';
-  }
-
-  function abrirMpesa() {
-    fecharModais();
-    document.getElementById('modalMpesa').innerHTML += '<button onclick="confirmarPagamento()" style="margin-top:1rem;background: green; color:white; padding:0.5rem 1rem; border:none; border-radius:10px;">Confirmar</button> <button onclick="voltar()" style="margin-top:1rem; margin-left:1rem; background: gray; color:white; padding:0.5rem 1rem; border:none; border-radius:10px;">Voltar</button>';
-    document.getElementById('modalMpesa').style.display = 'block';
-  }
-
-  function abrirEmola() {
-    fecharModais();
-    document.getElementById('modalEmola').innerHTML += '<button onclick="confirmarPagamento()" style="margin-top:1rem;background: orange; color:white; padding:0.5rem 1rem; border:none; border-radius:10px;">Confirmar</button> <button onclick="voltar()" style="margin-top:1rem; margin-left:1rem; background: gray; color:white; padding:0.5rem 1rem; border:none; border-radius:10px;">Voltar</button>';
-    document.getElementById('modalEmola').style.display = 'block';
-  }
-</script>
-
-</section>
-
-<script>
-  let total = 0;
-  function adicionar(valor) {
-    total += valor;
-    document.getElementById('total').innerText = total.toFixed(2);
-  }
-</script>
-
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
 </body>
 </html>
