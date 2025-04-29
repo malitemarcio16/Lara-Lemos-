@@ -1,146 +1,219 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lindyla Take Away</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
   <style>
-    :root {
-      --rosa: #e26d9e;
-      --fundo: #fff6f0;
-      --borda: #fce9e1;
-      --texto: #4b2e2e;
-    }
     body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background-color: #fff0f5;
+      color: #5c3a3a;
       margin: 0;
-      font-family: 'Arial', sans-serif;
-      background: var(--fundo);
-      color: var(--texto);
-      overflow-x: hidden;
+      padding: 0;
     }
+
     header {
-      background: linear-gradient(to right, var(--rosa), #f9c4d2);
-      padding: 2rem;
+      background-color: #f78fb3;
+      color: white;
+      padding: 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
+
     header img {
-      height: 60px;
-      border-radius: 50%;
+      height: 80px;
+      width: auto;
+      margin-right: 20px;
     }
-    header h1 {
-      font-size: 2rem;
-    }
-    .hero {
-      padding: 5rem 2rem;
+
+    .header-text {
+      flex-grow: 1;
       text-align: center;
-      background: linear-gradient(to bottom, var(--borda), var(--fundo));
     }
-    .hero button {
-      background: var(--rosa);
-      color: white;
-      padding: 1rem 2rem;
-      border: none;
-      border-radius: 30px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    .hero button:hover {
-      transform: scale(1.05);
-    }
+
     section {
-      padding: 2rem;
-      max-width: 1200px;
-      margin: auto;
+      margin: 20px;
+      padding: 20px;
+      background-color: #fffaf0;
+      border-radius: 12px;
     }
+
     h2 {
+      color: #f78fb3;
       text-align: center;
-      margin-bottom: 2rem;
     }
-    footer {
+
+    .cardapio {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    .item {
+      background-color: #ffe4e1;
+      border: 2px solid #ffc0cb;
+      border-radius: 12px;
+      margin: 10px;
+      width: 250px;
       text-align: center;
-      padding: 2rem;
-      background: var(--rosa);
+      padding: 10px;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .item img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .preco {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      background-color: #f78fb3;
       color: white;
-      margin-top: 4rem;
+      padding: 5px 10px;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    button {
+      background-color: #f78fb3;
+      color: white;
+      border: none;
+      padding: 10px;
+      width: 100%;
+      cursor: pointer;
+      border-radius: 8px;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #ff5e9c;
+    }
+
+    .whatsapp-btn {
+      background-color: #25d366;
+      color: white;
+      font-size: 16px;
+      padding: 15px;
+      text-align: center;
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 20px 0;
+    }
+
+    .whatsapp-btn:hover {
+      background-color: #128c7e;
+    }
+
+    .categories {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .category {
+      padding: 10px;
+      background-color: #f78fb3;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      flex-grow: 1;
+      text-align: center;
+    }
+
+    .category:hover {
+      background-color: #ff5e9c;
     }
   </style>
 </head>
 <body>
-  <header data-aos="fade-down">
-    <img src="images/logo.png" alt="Logo Lindyla">
-    <h1>Lindyla Take Away</h1>
+  <header>
+    <img src="images/logo.png" alt="Lindyla Logo">
+    <div class="header-text">
+      <h1>Lindyla Take Away</h1>
+      <p>Comida deliciosa, feita com amor!</p>
+    </div>
   </header>
 
-  <section class="hero" data-aos="zoom-in">
-    <h2>Bem-vinda!</h2>
-    <p>Explore nossos pratos com um toque doce e caseiro</p>
-    <button onclick="document.getElementById('fastfood').scrollIntoView({ behavior: 'smooth' })">Ver Cardápio</button>
-  </section>
+  <div class="categories">
+    <div class="category" onclick="scrollToSection('tostas')">Tostas Mistas</div>
+    <div class="category" onclick="scrollToSection('bebidas')">Bebidas</div>
+    <div class="category" onclick="scrollToSection('pizza')">Tipos de Pizza</div>
+    <div class="category" onclick="scrollToSection('burritos')">Tipos de Burritos</div>
+    <div class="category" onclick="scrollToSection('frango')">Pratos de Frango</div>
+  </div>
 
-  <!-- Seção combinada -->
-  <section id="fastfood">
-    <h2 style="text-align: center; font-size: 2rem; margin-bottom: 2rem;">Fast Food</h2>
-    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem;">
-      <!-- Zona combinada: Tostas + Pizzas -->
-      <div style="flex: 1 1 38%; background: white; border-radius: 20px; padding: 20px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
-        <h3 style="text-align: center; font-size: 24px; margin-bottom: 10px;">🥪 Tipos de Tostas</h3>
-        <ul style="list-style: none; padding: 0; font-size: 18px; color: var(--texto); margin-bottom: 2rem;">
-          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Tosta Mista</li>
-          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Tosta de Frango</li>
-          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Tosta Atum</li>
-          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Tosta Vegetariana</li>
-          <li style="padding: 10px 0;">Tosta de Queijo e Tomate</li>
-        </ul>
-        <h3 style="text-align: center; font-size: 24px; margin-bottom: 10px;">🍕 Tipos de Pizza</h3>
-        <ul style="list-style: none; padding: 0; font-size: 18px; color: var(--texto);">
-          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Margherita</li>
-          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Pepperoni</li>
-          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Calabresa</li>
-          <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Quatro Queijos</li>
-          <li style="padding: 10px 0;">Frango com Catupiry</li>
-        </ul>
-      </div>
-
-      <!-- Frango e Burritos lado a lado -->
-      <div style="display: flex; flex: 1 1 58%; gap: 2rem; flex-wrap: wrap;">
-        <!-- Pratos de Frango -->
-        <div style="flex: 1 1 48%; background: white; border-radius: 20px; padding: 20px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
-          <h3 style="text-align: center; font-size: 24px; margin-bottom: 20px;">🍗 Pratos de Frango</h3>
-          <ul style="list-style: none; padding: 0; font-size: 18px; color: var(--texto);">
-            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Frango Grelhado</li>
-            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Frango à Passarinho</li>
-            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Frango Frito</li>
-            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Frango ao Caril</li>
-            <li style="padding: 10px 0;">Frango Crocante</li>
-          </ul>
-        </div>
-
-        <!-- Tipos de Burritos -->
-        <div style="flex: 1 1 48%; background: white; border-radius: 20px; padding: 20px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
-          <h3 style="text-align: center; font-size: 24px; margin-bottom: 20px;">🌯 Tipos de Burrito</h3>
-          <ul style="list-style: none; padding: 0; font-size: 18px; color: var(--texto);">
-            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Burrito Clássico</li>
-            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Burrito de Frango</li>
-            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Burrito Picante</li>
-            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Burrito Vegano</li>
-            <li style="padding: 10px 0;">Burrito com Queijo</li>
-          </ul>
-        </div>
+  <section id="tostas">
+    <h2>Tostas Mistas</h2>
+    <div class="cardapio">
+      <div class="item">
+        <img src="images/tosta1.jpg" alt="Tosta Mista" />
+        <h3>Tosta Mista</h3>
+        <p>Pão crocante com queijo e fiambre derretido no ponto, tostado na chapa.</p>
+        <div class="preco">80MT</div>
+        <button onclick="adicionar(80)">Adicionar</button>
       </div>
     </div>
   </section>
 
-  <footer>
-    <p>&copy; 2025 Lindyla Take Away. Todos os direitos reservados.</p>
-  </footer>
+  <section id="bebidas">
+    <h2>Bebidas</h2>
+    <div class="cardapio">
+      <!-- Conteúdo de bebidas -->
+    </div>
+  </section>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <section id="pizza">
+    <h2>Tipos de Pizza</h2>
+    <div class="cardapio">
+      <!-- Conteúdo de pizzas -->
+    </div>
+  </section>
+
+  <section id="burritos">
+    <h2>Tipos de Burritos</h2>
+    <div class="cardapio">
+      <!-- Conteúdo de burritos -->
+    </div>
+  </section>
+
+  <section id="frango">
+    <h2>Pratos de Frango</h2>
+    <div class="cardapio">
+      <!-- Conteúdo de frango -->
+    </div>
+  </section>
+
+  <div>
+    <a href="https://wa.me/258879416757">
+      <button class="whatsapp-btn">Fale Conosco no WhatsApp</button>
+    </a>
+  </div>
+
   <script>
-    AOS.init();
+    function adicionar(preco) {
+      alert('Item adicionado ao carrinho! Preço: ' + preco + 'MT');
+    }
+
+    function scrollToSection(id) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        console.warn('Seção não encontrada:', id);
+      }
+    }
   </script>
 </body>
 </html>
